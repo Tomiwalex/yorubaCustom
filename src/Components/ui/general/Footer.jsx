@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import whiteLogo from "../../../assets/icons/logo-white.png";
 
 const Footer = () => {
   return (
@@ -7,21 +8,25 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
           <div className="sm:col-span-2">
             <h1 className="max-w-lg text-xl font-semibold tracking-tight text-white  xl:text-2xltext-white">
-              Subscribe our newsletter to get update.
+              Subscribe to our newsletter to get update.
             </h1>
 
-            <form className="flex flex-col mx-auto mt-6 space-y-3 md:space-y-0 md:flex-row">
+            <form className="max-w-[306px] mt-2 border-[2px] border-[#fff] flex justify-between items-center rounded-md  text-sm mb-3">
               <input
-                id="email"
-                type="text"
-                className="px-4 py-2  rounded-md bg-white text-gray-700 border-gray-600  focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
-                placeholder="Email Address"
+                type="email"
+                name="email"
+                id=""
+                placeholder="Enter your email"
+                className="focus:outline-none ml-2 inline-block bg-transparent"
                 required
+                autoComplete="off"
               />
 
-              <button className="w-full px-6 py-2.5 text-sm font-medium tracking-wider text-white transition-colors duration-300 transform md:w-auto md:mx-4 focus:outline-none bg-gray-800 rounded-lg hover:bg-gray-700 focus:ring focus:ring-gray-300 focus:ring-opacity-80">
-                Subscribe
-              </button>
+              <input
+                type="submit"
+                value="Subscribe"
+                className=" hover:text-[#4b0102] font-bold focus:text-[#4b0102] focus:outline-none bg-white p-3 lg:p-4 color-brown transition-all duration-300 ease-in-out rounded-md hover:bg-white focus:bg-white hover:ring-[1px] hover:ring-[#4b1012]"
+              />
             </form>
           </div>
 
@@ -86,13 +91,13 @@ const Footer = () => {
         <hr className="my-6 border-gray-200 md:my-8 " />
 
         <div className="flex items-center justify-between">
-          <a href="#">
+          <Link to="/">
             <img
               className="w-[110px] h-auto"
-              src="/public/icons/logo-white.png"
-              alt=""
+              src={whiteLogo}
+              alt="white-logo"
             />
-          </a>
+          </Link>
 
           <div className="flex -mx-2">
             <a

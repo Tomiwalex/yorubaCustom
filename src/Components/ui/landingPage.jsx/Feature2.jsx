@@ -1,14 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 const Feature2 = () => {
   return (
-    <section className="py-12 bg-white sm:py-16 lg:py-20">
-      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <section className="py-20 bg-white">
+      <div className="px-5 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="max-w-[1200px] mx-auto flex flex-wrap justify-between align-top">
           <div className="mb-5 text-left ">
-            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl font-pj">
+            <h2 className="text-2xl font-bold text-gray-900 lg:text-4xl font-pj">
               Àwọn àṣà kookan ni ilẹ̀ Yorùbá tó gbàjùmọ́
             </h2>
-            <h3 className="color-brown text-xl font-bold mt-3">
+            <h3 className="color-brown text-base lg:text-xl font-medium mt-3">
               (Some popular Yoruba cultural events)
             </h3>
           </div>
@@ -21,7 +21,7 @@ const Feature2 = () => {
           </a>
         </div>
 
-        <div className="grid max-w-[1200px] grid-cols-1 mx-auto mt-8 text-center sm:mt-16 sm:text-left sm:grid-cols-4 gap-y-8 gap-x-8 lg:gap-x-20">
+        <div className="grid max-w-[1200px] grid-cols-1 mx-auto mt-12 text-left sm:mt-16 sm:grid-cols-4 gap-y-14 gap-x-8 lg:gap-x-20">
           {/* first */}
           <div className="relative group">
             <div className="overflow-hidden rounded-lg aspect-w-16 aspect-h-9">
@@ -36,7 +36,7 @@ const Feature2 = () => {
               Osun-Osogbo Festival
             </p>
 
-            <p className="mt-4 text-truncated text-sm font-normal text-gray-600">
+            <p className="mt-2 text-truncated text-sm font-normal text-gray-600">
               The Osun-Osogbo Festival is an annual celebration in Osogbo,
               Nigeria, to honor Osun, the Yoruba goddess of fertility and water.
               The festival lasts two weeks and includes traditional cleansing,
@@ -67,7 +67,7 @@ const Feature2 = () => {
               Ojude Oba Festival
             </p>
 
-            <p className="text-truncated mt-4 text-sm font-normal text-gray-600">
+            <p className="text-truncated mt-2 text-sm font-normal text-gray-600">
               The Ojude Oba Festival is a vibrant and colorful cultural
               celebration held annually in Ijebu-Ode, a historic town in Ogun
               State, Nigeria. The festival, which translates to "The King's
@@ -104,7 +104,7 @@ const Feature2 = () => {
               Eyo Festival
             </p>
 
-            <p className="mt-4 text-truncated text-sm font-normal text-gray-600">
+            <p className="mt-2 text-truncated text-sm font-normal text-gray-600">
               The Eyo Festival, also known as the Adamu Orisha Play, is a
               colorful masquerade procession that takes place in Lagos, Nigeria.
               The festival is held to commemorate the life of a deceased Oba
@@ -133,7 +133,7 @@ const Feature2 = () => {
               Sango Festival
             </p>
 
-            <p className="mt-4 text-truncated text-sm font-normal text-gray-600">
+            <p className="mt-2 text-truncated text-sm font-normal text-gray-600">
               The Sango Festival is a traditional celebration held in Oyo, a
               historic city in Oyo State, Nigeria, to honor Sango, the Yoruba
               deity of thunder and lightning. This festival is deeply rooted in

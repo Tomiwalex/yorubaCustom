@@ -1,13 +1,13 @@
 const FeaturesSection = () => {
   return (
-    <section className="py-12 bg-[#4b010210] sm:py-16 lg:py-20 cursor-pointer">
+    <section className="py-[80px] px-1 bg-[#4b010210] sm:py-20 lg:py-[100px] cursor-pointer">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold leading-tight color-brown sm:text-4xl xl:text-5xl max-w-3xl mx-auto ">
+        <div className="text-center mb-[60px]">
+          <h2 className="text-2xl font-bold leading-tight color-brown sm:text-4xl xl:text-5xl max-w-3xl mx-auto ">
             Ṣíṣe Àfihàn Ogún Àṣà Wa
           </h2>
 
-          <h3 className="text-[#013501] text-xl font-bold mt-3">
+          <h3 className="text-[#013501] text-lg lg:text-xl font-bold mt-3">
             (Showcasing our cultural inheritance)
           </h3>
           <p className="mt-4 text-base leading-7 text-gray-600 sm:mt-8 max-w-4xl mx-auto">
@@ -18,7 +18,7 @@ const FeaturesSection = () => {
           </p>
         </div>
 
-        <div className="relative grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2 sm:gap-x-12 gap-y-12 md:grid-cols-3 md:gap-0 xl:mt-24">
+        <div className="relative grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2 sm:gap-x-12 gap-y-12 md:grid-cols-3 md:gap-2 xl:mt-24">
           <div className="p-6 py-10 md:p-8 lg:p-14 relative rounded-3xl  bg-[#4b1012] lg:mx-3 ">
             {/* bg image*/}
             <h3 className=" text-xl lg:text-3xl font-bold text-white font-pj">

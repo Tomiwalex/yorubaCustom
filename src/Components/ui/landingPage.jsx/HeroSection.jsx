@@ -23,7 +23,7 @@ const HeroSection = () => {
         <div className="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl lg:z-[2] h-full">
           <div className="max-w-xl mx-auto text-center lg:max-w-md xl:max-w-lg lg:text-left lg:mx-0">
             <div className="blur-circle h-40 w-40 absolute blur-[70px] rounded-full z-[-1]"></div>
-            <h1 className="text-3xl font-bold color-brown sm:text-4xl xl:text-5xl xl:leading-tight">
+            <h1 className="text-[36px] leading-[1.3] font-bold color-brown sm:text-4xl xl:text-5xl xl:leading-tight">
               Preserving Our Cultural Heritage
             </h1>
             <p className="mt-8 text-base font-normal leading-7 text-[#4b0102] lg:max-w-md xl:pr-0 lg:pr-16">
@@ -37,13 +37,13 @@ const HeroSection = () => {
               Subscribe to our news letter
             </h2>
             <div className="flex-wrap flex items-center justify-center  space-x-5  lg:justify-start">
-              <form className="border-[2px] border-[#4b0102] flex justify-between items-center rounded-md p-1 text-sm mb-3">
+              <form className="border-[2px] border-[#4b0102] flex justify-between items-center rounded-lg  text-sm mb-3">
                 <input
                   type="email"
                   name="email"
                   id=""
                   placeholder="Enter your email"
-                  className="focus:outline-none ml-2 inline-block"
+                  className="focus:outline-none ml-2 inline-block bg-transparent"
                   required
                   autoComplete="off"
                 />
@@ -51,11 +51,12 @@ const HeroSection = () => {
                 <input
                   type="submit"
                   value="Subscribe"
-                  className=" hover:text-[#4b0102] font-bold focus:text-[#4b0102] focus:outline-none bg-brown p-4 text-white transition-all duration-300 ease-in-out rounded-md hover:bg-white focus:bg-white hover:ring-[1px] hover:ring-[#4b1012]"
+                  className=" hover:text-[#4b0102] font-bold focus:text-[#4b0102] focus:outline-none bg-brown p-3 lg:p-4 text-white transition-all duration-300 ease-in-out rounded-md hover:bg-white focus:bg-white hover:ring-[1px] hover:ring-[#4b1012]"
                 />
               </form>
 
-              <a
+              {/* Watch video */}
+              {/* <a
                 href="#"
                 title=""
                 className="
@@ -82,13 +83,13 @@ const HeroSection = () => {
                 role="button"
               >
                 Watch Video
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
-        <div className="mt-8 lg:hidden">
+        <div className="lg:hidden">
           <img
-            className="object-cover w-full h-full"
+            className="object-cover w-full relative top-[43px] min-h-[340px]"
             src={festivalImage}
             alt="festival"
           />
