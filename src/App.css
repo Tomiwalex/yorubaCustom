@@ -1,0 +1,75 @@
+#root {
+  margin: auto;
+}
+
+.custom-shape-divider-bottom-1717415849 {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  z-index: 4;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1717415849 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 55px;
+}
+
+.custom-shape-divider-bottom-1717415849 .shape-fill {
+  fill: #f4efef;
+}
+
+.text-truncated {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* max-height: 4.5em; Adjust based on your line height */
+}
+
+.fadeIn {
+  /* display: none; */
+  animation: fadeIn 300ms ease-in-out forwards;
+}
+
+.fadeOut {
+  display: none;
+  animation: fadeOut 300ms ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    display: block;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    display: block;
+    visibility: visible;
+  }
+  99% {
+    opacity: 0;
+  }
+
+  100% {
+    visibility: hidden;
+    display: none;
+  }
+}

@@ -1,0 +1,41 @@
+.nav-link::after {
+  content: "";
+  display: block;
+  border-radius: 100%;
+  width: 7px;
+  height: 7px;
+  position: relative;
+  top: 15px;
+  right: 50%;
+  left: 50%;
+  background: transparent;
+  transition: all 300ms ease-in-out;
+}
+.nav-link:hover::after {
+  top: 10px;
+  background-color: #4b0102;
+}
+
+.container {
+  max-width: 1280px;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.features-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.features-card p {
+  flex-basis: 100%;
+  position: relative;
+  top: -100%;
+  visibility: visible;
+  transition: all 300ms ease-in-out;
+}
+.features-card:hover p {
+  top: 0;
+  transition: all 300ms ease-in;
+  visibility: visible;
+}/*# sourceMappingURL=style.css.map */
