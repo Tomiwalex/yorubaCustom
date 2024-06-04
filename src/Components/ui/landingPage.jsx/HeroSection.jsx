@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/jsx-no-comment-textnodes */
 import Header from "../general/Header";
-
+import festivalImage from "../../../assets/images/festival.png";
 const HeroSection = () => {
   return (
     <section className="bg-[#4b010205] lg:max-h-dvh">
@@ -16,7 +16,7 @@ const HeroSection = () => {
 
           <img
             className="object-cover object-right-bottom w-100% ml-auto h-full"
-            src="/public/images/festival.png"
+            src={festivalImage}
             alt=""
           />
         </div>
@@ -89,7 +89,7 @@ const HeroSection = () => {
         <div className="mt-8 lg:hidden">
           <img
             className="object-cover w-full h-full"
-            src="/public/images/festival.png"
+            src={festivalImage}
             alt="festival"
           />
         </div>

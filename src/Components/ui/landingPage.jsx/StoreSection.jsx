@@ -1,8 +1,10 @@
+// import artifactImg from "../../../assets/images/artifact-image.jpg";
+
 const StoreSection = () => {
   return (
     <div
       style={{
-        background: `url("/public/images/artifact-image.jpg")`,
+        background: `url("../../../assets/images/artifact-image.jpg")`,
         backgroundPosition: "bottom",
       }}
       className="bg-[] py-16 relative"

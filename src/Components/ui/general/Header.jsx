@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../../../assets/icons/logo-brown-2.jpg";
 
 // eslint-disable-next-line react/prop-types
 const Header = ({ type, current }) => {
@@ -16,8 +17,8 @@ const Header = ({ type, current }) => {
             <Link to="/" title="" className="flex">
               <img
                 className="w-[100px] lg:w-[120px] h-auto"
-                src="../../../public/icons/logo-brown-2.jpg"
-                alt=""
+                src={logo}
+                alt="logo"
               />
             </Link>
           </div>
