@@ -79,6 +79,11 @@
   fill: #f4efef;
 }
 
+.bgimg {
+  background-image: url("/src/assets/images/artifact-image.jpg");
+  background-position: bottom;
+}
+
 /* animation keyframes */
 @keyframes clippath {
   0% {

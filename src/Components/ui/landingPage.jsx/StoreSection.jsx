@@ -4,10 +4,9 @@ const StoreSection = () => {
   return (
     <div
       style={{
-        background: `url("../../../assets/images/artifact-image.jpg")`,
         backgroundPosition: "bottom",
       }}
-      className="bg-[] py-16 relative"
+      className="bg-[] py-16 relative bgimg"
     >
       <div className="absolute inset-0 bg-gradient-to-r from-[#4b0102] from-50% to-[#4b101299] z-[0]"></div>
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8 relative index-[1]">
