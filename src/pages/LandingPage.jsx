@@ -26,7 +26,7 @@ const LandingPage = () => {
       {open && (
         <motion.div
           animate={{ opacity: 1 }}
-          className="p-5 absolute z-[999]  w-[100dvw] h-[100dvh] top-0 bottom-0 flex items-center bg-[#FCB92D90] backdrop-blur-md opacity-0"
+          className="p-5 absolute z-[999]  w-[100dvw] h-[100dvh] top-0 bottom-0 flex items-center bg-[#FCB92D10] backdrop-blur-md opacity-0"
         >
           <div className="overflow-hidden lg:max-h-[270px] min-h-[200px] flex flex-wrap justify-between w-full max-w-[700px] mx-auto  my-auto bg-white rounded-2xl">
             <div className="basis-[100%] md:basis-[50%] overflow-hidden">
