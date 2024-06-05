@@ -2,31 +2,92 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import Header from "../general/Header";
 import festivalImage from "../../../assets/images/festival.png";
+import festivalImage3 from "../../../assets/images/festival3.jpg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectFade, Autoplay, Pagination } from "swiper/modules";
+import { motion } from "framer-motion";
+
+import "swiper/css/effect-fade";
+import "swiper/css";
+import "swiper/css/pagination";
+
 const HeroSection = () => {
   return (
     <section className="bg-[#4b010205] lg:max-h-dvh">
+      <div className="sticky top-0 bg-red-200 z-[10]">
+        <Header current="home" />
+      </div>
+
       <div className="relative pb-12 lg:py-20 lg:pt-10 xl:pb-20">
-        <div className="sticky top-0 lg:top-[20px] z-[3] max-w-[1200px] md:mx-10 lg:mx-20 xl:mx-auto lg-mx-10 lg:rounded-xl mb-20">
-          <Header type={1} current="home" />
-        </div>
-
         <div className="absolute inset-0  hidden lg:block">
-          <div className="absolute z-[2] w-[45%] h-full bg-white clip-path"></div>
-          <div className="absolute z-[1] w-full h-full bg-[#4b010260]"></div>
+          {/* white pattern */}
+          {/* <div className="absolute z-[3] w-[45%] h-full bg-[#4b101205] clip-path"></div> */}
 
-          <img
-            className="object-cover object-right-bottom w-100% ml-auto h-full"
-            src={festivalImage}
-            alt=""
-          />
+          {/* brown overlay */}
+          <div className="absolute z-[2] w-full h-full bg-gradient-to-r from-[#fff] from-40% to-[#4b101230]"></div>
+
+          {/*slider Image for large screen */}
+
+          <Swiper
+            className="w-[100%] h-full"
+            effect={"fade"}
+            modules={[EffectFade, Autoplay, Pagination]}
+            spaceBetween={0}
+            slidesPerView={1}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            pagination={{ clickable: true }}
+            // onSlideChange={() => console.log("slide change")}
+            // onSwiper={(swiper) => console.log(swiper)}
+          >
+            <SwiperSlide>
+              <img
+                className="object-cover object-right-bottom  ml-auto h-full"
+                src={festivalImage}
+                alt=""
+              />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <img
+                className="object-cover object-right-bottom w-[80%] ml-auto h-auto"
+                src="https://miro.medium.com/v2/resize:fit:1200/1*u2kX3FFJ5v-AKrfROA4sWw.jpeg"
+                alt=""
+              />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <img
+                className="object-cover object-right-bottom w-[70%] ml-auto h-full"
+                src={festivalImage3}
+                alt="image 4"
+              />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <img
+                className="object-cover object-right-bottom w-120% ml-auto h-full"
+                src="https://www.propertypro.ng/blog/wp-content/uploads/2017/07/053-what-you-should-know-about-the-yoruba-culture.jpg"
+                alt="image 5"
+              />
+            </SwiperSlide>
+          </Swiper>
         </div>
-        <div className="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl lg:z-[2] h-full">
+
+        {/* text section */}
+        <motion.div
+          initial={{ translateY: 50, opacity: 0 }}
+          whileInView={{ translateY: 0, opacity: 1 }}
+          className="headline relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl lg:z-[4] h-full"
+        >
           <div className="max-w-xl mx-auto text-center lg:max-w-md xl:max-w-lg lg:text-left lg:mx-0">
             <div className="blur-circle h-40 w-40 absolute blur-[70px] rounded-full z-[-1]"></div>
-            <h1 className="text-[36px] leading-[1.3] font-bold color-brown sm:text-4xl xl:text-5xl xl:leading-tight">
+            <h1 className="mt-12 lg:mt-0 text-[36px] leading-[1.3] font-bold color-brown sm:text-4xl xl:text-5xl xl:leading-tight">
               Preserving Our Cultural Heritage
             </h1>
-            <p className="mt-8 text-base font-normal leading-7 text-[#4b0102] lg:max-w-md xl:pr-0 lg:pr-16">
+            <p className="headline mt-8 text-base font-normal leading-7 text-[#4b0102] lg:max-w-md xl:pr-0 lg:pr-16">
               Yoruba customs provide a rich foundation for individuals to learn,
               unlearn, and relearn about the vibrant Yoruba traditions and
               Culture. By highlighting the splendor of Yoruba heritage, we're
@@ -86,7 +147,9 @@ const HeroSection = () => {
               </a> */}
             </div>
           </div>
-        </div>
+        </motion.div>
+
+        {/* hero image for small screen */}
         <div className="lg:hidden">
           <img
             className="object-cover w-full relative top-[43px] min-h-[340px]"
@@ -95,7 +158,7 @@ const HeroSection = () => {
           />
         </div>
 
-        {/* svg */}
+        {/* svg shape divider*/}
         <div className="custom-shape-divider-bottom-1717415849">
           <svg
             data-name="Layer 1"

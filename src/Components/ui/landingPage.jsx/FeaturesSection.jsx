@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const FeaturesSection = () => {
   return (
     <section className="py-[80px] px-1 bg-[#4b010210] sm:py-20 lg:py-[100px] cursor-pointer">
@@ -18,9 +20,15 @@ const FeaturesSection = () => {
           </p>
         </div>
 
-        <div className="relative grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2 sm:gap-x-12 gap-y-12 md:grid-cols-3 md:gap-2 xl:mt-24">
-          <div className="p-6 py-10 md:p-8 lg:p-14 relative rounded-3xl  bg-[#4b1012] lg:mx-3 ">
-            {/* bg image*/}
+        <motion.div className="relative grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2 sm:gap-x-12 gap-y-12 md:grid-cols-3 md:gap-2 xl:mt-24">
+          <motion.div
+            initial={{ translateY: 50, opacity: 0 }}
+            whileInView={{ translateY: 0, opacity: 1 }}
+            className="p-6 py-10 md:p-8 lg:p-14 relative rounded-3xl  bg-[#4b1012] lg:mx-3 "
+          >
+            <span className="material-symbols-outlined text-7xl text-white font-medium">
+              school
+            </span>
             <h3 className=" text-xl lg:text-3xl font-bold text-white font-pj">
               Educative
             </h3>
@@ -31,10 +39,17 @@ const FeaturesSection = () => {
               of perfect material tailored for each user, we ensure that
               everyone can delve into the depths of Yoruba cultural heritage
             </p>
-          </div>
+          </motion.div>
 
           {/* second feature */}
-          <div className="p-6 py-10 md:p-8 lg:p-14 md:border-l md:border-gray-200 relative overflow-hidden rounded-3xl bg-[#4b2601] lg:mx-3">
+          <motion.div
+            initial={{ translateY: 70, opacity: 0 }}
+            whileInView={{ translateY: 0, opacity: 1 }}
+            className="p-6 py-10 md:p-8 lg:p-14 md:border-l md:border-gray-200 relative overflow-hidden rounded-3xl bg-[#4b2601] lg:mx-3"
+          >
+            <span className="material-symbols-outlined text-7xl text-white font-medium">
+              crowdsource
+            </span>
             <h3 className="text-xl lg:text-3xl font-bold text-white ">
               Entertaining
             </h3>
@@ -43,10 +58,17 @@ const FeaturesSection = () => {
               We bring you periodic cultural events amongst the Yoruba people.
               Enjoy the fun wherever you’re in the world
             </p>
-          </div>
+          </motion.div>
 
           {/* third feature */}
-          <div className="p-6 py-10 md:p-8 lg:p-14 md:border-l md:border-gray-200 relative bg-[#013501] rounded-3xl lg:mx-3 ">
+          <motion.div
+            initial={{ translateY: 100, opacity: 0 }}
+            whileInView={{ translateY: 0, opacity: 1 }}
+            className="p-6 py-10 md:p-8 lg:p-14 md:border-l md:border-gray-200 relative bg-[#013501] rounded-3xl lg:mx-3 "
+          >
+            <span className="material-symbols-outlined text-7xl text-white font-medium">
+              dynamic_feed
+            </span>
             <h3 className="text-xl lg:text-3xl font-bold text-white">
               Dynamic
             </h3>
@@ -57,8 +79,8 @@ const FeaturesSection = () => {
               Yoruba traditional religion by purchasing authentic Yoruba totems
               and symbols directly from our website. .
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

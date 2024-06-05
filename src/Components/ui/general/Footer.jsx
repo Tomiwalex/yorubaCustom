@@ -3,21 +3,21 @@ import whiteLogo from "../../../assets/icons/logo-white.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-br from-[#4b0102] from-80% to-[#4b0102]">
+    <footer className="bg-[#2b090a]">
       <div className="container max-w-[1200px] px-6 py-12 mx-auto">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
-          <div className="sm:col-span-2">
-            <h1 className="max-w-lg text-xl font-semibold tracking-tight text-white  xl:text-2xltext-white">
+        <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
+          <div className="col-span-2">
+            <h1 className="max-w-lg text-xl font-semibold tracking-tight mb-2 text-white  xl:text-2xltext-white">
               Subscribe to our newsletter to get update.
             </h1>
 
-            <form className="max-w-[306px] mt-2 border-[2px] border-[#fff] flex justify-between items-center rounded-md  text-sm mb-3">
+            <form className="overflow-hidden max-w-[306px] mt-3 border-[2px] border-[#fff] flex justify-between items-center rounded-md  text-sm mb-3">
               <input
                 type="email"
                 name="email"
                 id=""
                 placeholder="Enter your email"
-                className="focus:outline-none ml-2 inline-block bg-transparent"
+                className="ml-2 focus:outline-none inline-block bg-transparent"
                 required
                 autoComplete="off"
               />
@@ -34,12 +34,13 @@ const Footer = () => {
             <p className="font-semibold text-white">Quick Link</p>
 
             <div className="flex flex-col items-start mt-5 space-y-2">
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="transition-colors duration-300 text-gray-300  hover:underline hover:text-blue-500"
               >
                 Home
-              </a>
+              </Link>
+
               <Link
                 to="/blog"
                 className="transition-colors duration-300 text-gray-300  hover:underline hover:text-blue-500"
@@ -47,12 +48,13 @@ const Footer = () => {
                 Blog
               </Link>
 
-              <a
-                href="#"
+              <Link
+                to="/about"
                 className="transition-colors duration-300 text-gray-300  hover:underline hover:text-blue-500"
               >
                 About
-              </a>
+              </Link>
+
               <a
                 href="#"
                 className="transition-colors duration-300 text-gray-300  hover:underline hover:text-blue-500"

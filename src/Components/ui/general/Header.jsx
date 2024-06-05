@@ -9,14 +9,14 @@ const Header = ({ type, current }) => {
   return (
     <header
       style={{ backgroundColor: type == 1 ? "#ffffff99" : "#fff" }}
-      className=" lg:pb-0 rounded-xl backdrop-blur-sm"
+      className=" lg:pb-0  backdrop-blur-sm"
     >
       <div className=" mx-auto container max-w-7xl sm:px-6 lg:px-8">
-        <nav className="flex items-center justify-between h-16 lg:h-20">
+        <nav className="flex items-center justify-between h-12 lg:h-20">
           <div className="flex-shrink-0">
             <Link to="/" title="" className="flex">
               <img
-                className="w-[100px] lg:w-[120px] h-auto"
+                className="w-[90px] lg:w-[120px] h-auto"
                 src={logo}
                 alt="logo"
               />
@@ -80,14 +80,15 @@ const Header = ({ type, current }) => {
               </Link>
             )}
 
-            <a
-              href="#"
-              title=""
-              className="text-base nav-link font-medium text-black transition-all duration-200 "
-            >
-              {" "}
-              About{" "}
-            </a>
+            {current !== "about" && (
+              <Link
+                to="/about"
+                className="text-base nav-link font-medium text-black transition-all duration-200 "
+              >
+                {" "}
+                About
+              </Link>
+            )}
 
             <a
               href="#"
@@ -145,14 +146,27 @@ const Header = ({ type, current }) => {
         >
           <div className="flow-root">
             <div className="flex flex-col px-6 -my-2 space-y-1">
-              <a
-                href="#"
-                title=""
-                className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
-              >
-                {" "}
-                About{" "}
-              </a>
+              {current !== "home" && (
+                <Link
+                  to="/"
+                  title=""
+                  className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
+                >
+                  {" "}
+                  Home{" "}
+                </Link>
+              )}
+
+              {current !== "about" && (
+                <Link
+                  to="/about"
+                  title=""
+                  className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
+                >
+                  {" "}
+                  About{" "}
+                </Link>
+              )}
 
               {current !== "blog" && (
                 <Link
@@ -162,17 +176,6 @@ const Header = ({ type, current }) => {
                 >
                   {" "}
                   Blog{" "}
-                </Link>
-              )}
-
-              {current !== "home" && (
-                <Link
-                  to="/"
-                  title=""
-                  className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
-                >
-                  {" "}
-                  Home{" "}
                 </Link>
               )}
 
