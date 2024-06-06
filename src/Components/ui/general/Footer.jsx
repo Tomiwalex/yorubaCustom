@@ -55,12 +55,12 @@ const Footer = () => {
                 About
               </Link>
 
-              <a
-                href="#"
+              <Link
+                to="/contact"
                 className="transition-colors duration-300 text-gray-300  hover:underline hover:text-blue-500"
               >
                 Contact
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -74,12 +74,14 @@ const Footer = () => {
               >
                 Store
               </a>
-              <a
-                href="#"
+
+              <Link
+                to="/gallery"
                 className="transition-colors duration-300 text-gray-300  hover:underline hover:text-blue-500"
               >
                 Gallery
-              </a>
+              </Link>
+
               <a
                 href="#"
                 className="transition-colors duration-300 text-gray-300  hover:underline hover:text-blue-500"

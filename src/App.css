@@ -2,6 +2,10 @@
   margin: auto;
 }
 
+.font-julee {
+  font-family: "julee", cursive;
+}
+
 .custom-shape-divider-bottom-1717415849 {
   position: absolute;
   bottom: -2px;

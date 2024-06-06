@@ -90,14 +90,15 @@ const Header = ({ type, current }) => {
               </Link>
             )}
 
-            <a
-              href="#"
-              title=""
-              className="text-base nav-link font-medium text-black transition-all duration-200 "
-            >
-              {" "}
-              Contact{" "}
-            </a>
+            {current !== "contact" && (
+              <Link
+                to="/contact"
+                className="text-base nav-link font-medium text-black transition-all duration-200 "
+              >
+                {" "}
+                Contact
+              </Link>
+            )}
 
             <a
               href="#"
@@ -108,14 +109,15 @@ const Header = ({ type, current }) => {
               Contest{" "}
             </a>
 
-            <a
-              href="#"
-              title=""
-              className="text-base nav-link font-medium text-black transition-all duration-200 "
-            >
-              {" "}
-              Gallery{" "}
-            </a>
+            {current !== "gallery" && (
+              <Link
+                to="/gallery"
+                className="text-base nav-link font-medium text-black transition-all duration-200 "
+              >
+                {" "}
+                Gallery
+              </Link>
+            )}
 
             <a
               href="#"
@@ -179,14 +181,16 @@ const Header = ({ type, current }) => {
                 </Link>
               )}
 
-              <a
-                href="#"
-                title=""
-                className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
-              >
-                {" "}
-                Contact{" "}
-              </a>
+              {current !== "contact" && (
+                <Link
+                  to="/contact"
+                  title=""
+                  className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
+                >
+                  {" "}
+                  Contact{" "}
+                </Link>
+              )}
               <a
                 href="#"
                 title=""
@@ -196,14 +200,16 @@ const Header = ({ type, current }) => {
                 Contest{" "}
               </a>
 
-              <a
-                href="#"
-                title=""
-                className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
-              >
-                {" "}
-                Gallery{" "}
-              </a>
+              {current !== "gallery" && (
+                <Link
+                  to="gallery"
+                  title=""
+                  className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
+                >
+                  {" "}
+                  Gallery{" "}
+                </Link>
+              )}
 
               <a
                 href="#"

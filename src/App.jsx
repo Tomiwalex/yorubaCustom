@@ -2,6 +2,8 @@ import "./App.css";
 import AboutPage from "./pages/AboutPage";
 import BlogDetails from "./pages/BlogDetails";
 import BlogPage from "./pages/BlogPage";
+import ContactPage from "./pages/ContactPage";
+import GalleryPage from "./pages/GalleryPage";
 import LandingPage from "./pages/LandingPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -14,6 +16,8 @@ function App() {
           <Route path="/blog" Component={BlogPage} />
           <Route path="/blog/:id" Component={BlogDetails} />
           <Route path="/about" Component={AboutPage} />
+          <Route path="/contact" Component={ContactPage} />
+          <Route path="/gallery" Component={GalleryPage} />
           <Route path="*" Component={LandingPage} />
         </Routes>
       </BrowserRouter>
