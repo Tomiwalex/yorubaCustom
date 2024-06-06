@@ -26,7 +26,7 @@ const LandingPage = () => {
       {open && (
         <motion.div
           animate={{ opacity: 1 }}
-          className="p-5 absolute z-[999]  w-[100dvw] h-[100dvh] top-0 bottom-0 flex items-center bg-[#FCB92D10] backdrop-blur-md opacity-0"
+          className="p-5 absolute z-[999]  w-[100dvw] h-[100dvh] top-0 bottom-0 flex items-center bg-[#FCB92D10] backdrop-blur-sm opacity-0"
         >
           <div className="overflow-hidden lg:max-h-[270px] min-h-[200px] flex flex-wrap justify-between w-full max-w-[700px] mx-auto  my-auto bg-white rounded-2xl">
             <div className="basis-[100%] md:basis-[50%] overflow-hidden">
@@ -37,23 +37,23 @@ const LandingPage = () => {
               />
             </div>
 
-            <div className="cursor-pointer p-5 text-left basis-[100%] md:basis-[50%] bg-red">
+            <div className="relative cursor-pointer py-5 text-left basis-[100%] md:basis-[50%] bg-red">
               <span
                 onClick={() => setOpen(false)}
-                className="ml-auto block hover:bg-red-400 transition-all duration-300 ease-in-out hover:text-white  bg-gray-200 rounded-md p-2 py-1 mb-4 w-9 material-symbols-outlined text-xl "
+                className="mx-5 ml-auto block hover:bg-red-400 transition-all duration-300 ease-in-out hover:text-white  bg-gray-200 rounded-md p-2 py-1 mb-4 w-9 material-symbols-outlined text-xl "
               >
                 close
               </span>
 
-              <h2 className="font-bold color-brown text-2xl lg:3xl">
+              <h2 className="font-bold color-brown text-2xl lg:3xl px-4">
                 Let's keep in touch
               </h2>
 
-              <p className="text-smlg:text-base max-w-[70%]  font-medium mt-1 text-gray-600">
+              <p className="px-5 text-sm lg:text-base max-w-[70%]  font-medium mt-1 text-gray-600">
                 Subscribe to our news letter to get exciting offers and updates
               </p>
 
-              <form className="border-[1px] overflow-hidden w-full lg:max-w-[300px]  mt-5 border-[#4b0102] flex justify-between items-center rounded-lg text-sm mb-3">
+              <form className="relative  border-[1px] overflow-hidden w-[calc(100%-40px)] mx-auto lg:max-w-[300px]  mt-5 border-[#4b0102] flex justify-between items-center rounded-lg text-sm mb-3">
                 <input
                   type="email"
                   name="email"
@@ -67,7 +67,7 @@ const LandingPage = () => {
                 <input
                   type="submit"
                   value="Subscribe"
-                  className=" hover:text-[#4b0102] font-bold focus:text-[#4b0102] focus:outline-none bg-brown p-3 py-3 lg:p-4 text-white transition-all duration-300 ease-in-out rounded-md hover:bg-[#4b010210] focus:bg-[#4b010210] hover:ring-[1px] hover:ring-[#4b101290]"
+                  className=" hover:text-[#4b0102] font-bold focus:text-[#4b0102] focus:outline-none bg-brown p-3 px-1 py-3 lg:p-4 text-white transition-all duration-300 ease-in-out rounded-md hover:bg-[#4b010210] focus:bg-[#4b010210] hover:ring-[1px] hover:ring-[#4b101290]"
                 />
               </form>
             </div>
