@@ -1,12 +1,13 @@
 import Header from "../Components/ui/general/Header";
 import { motion } from "framer-motion";
 import image1 from "../assets/images/two-people.png";
+import image2 from "../assets/images/idol.png";
 import Footer from "../Components/ui/general/Footer";
 import FeatureSection from "../Components/ui/about/FeatureSection";
 
 const AboutPage = () => {
   return (
-    <div>
+    <div className="overflow-y-hidden">
       <Header current={"about"} />
 
       <section className="bg-[#FCB92D40] relative">
@@ -15,6 +16,13 @@ const AboutPage = () => {
           alt="two-people-facing-each-other"
           className="absolute h-full z-[-1] "
         />
+
+        <img
+          src={image2}
+          className="absolute h-full lg:h-auto z-[-2] right-[-50%] lg:right-[-14%] bottom-[-30%]"
+        />
+
+        {/* second underlay image */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/icons/logo-brown-2.jpg";
+import brownLogo from "../../../assets/icons/logo-brown.png";
 
 // eslint-disable-next-line react/prop-types
 const Header = ({ type, current }) => {
@@ -13,15 +14,36 @@ const Header = ({ type, current }) => {
     >
       <div className=" mx-auto container max-w-7xl sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between h-12 lg:h-20">
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 mr-3  lg:flex-1">
             <Link to="/" title="" className="flex">
               <img
-                className="w-[90px] lg:w-[120px] h-auto"
-                src={logo}
+                style={{
+                  bottom:
+                    current == "store" || current === "home" ? "5px" : "0px",
+                }}
+                className="relative w-[90px] lg:w-[110px] h-auto"
+                src={
+                  current === "store" || current === "home" ? brownLogo : logo
+                }
                 alt="logo"
               />
             </Link>
           </div>
+
+          {/* search bar for the store */}
+          {current === "store" && (
+            <div className="transition-all duration-300 ease-in-out hover:shadow-lg shadow-[#4b1012] overflow-hidden flex items-center border-[1px] border-[#000000] rounded-md lg:mx-5">
+              <input
+                type="text"
+                placeholder="Search"
+                className="w-full max-w-xs focus:outline-none px-2"
+              />
+
+              <span className=" material-symbols-outlined text-base lg:text-xl bg-black text-white lg:py-2 py-[6px] px-[10px] lg:px-3 cursor-pointer">
+                search
+              </span>
+            </div>
+          )}
 
           <button
             onClick={() => setNavOpen(!navOpen)}
@@ -60,16 +82,6 @@ const Header = ({ type, current }) => {
           </button>
 
           <div className="hidden lg:flex lg:items-center lg:ml-auto lg:space-x-10">
-            {current !== "blog" && (
-              <Link
-                to="/blog"
-                className="text-base nav-link font-medium text-black transition-all duration-200 "
-              >
-                {" "}
-                Blog{" "}
-              </Link>
-            )}
-
             {current !== "home" && (
               <Link
                 to="/"
@@ -80,7 +92,17 @@ const Header = ({ type, current }) => {
               </Link>
             )}
 
-            {current !== "about" && (
+            {current !== "blog" && current !== "store" && (
+              <Link
+                to="/blog"
+                className="text-base nav-link font-medium text-black transition-all duration-200 "
+              >
+                {" "}
+                Blog{" "}
+              </Link>
+            )}
+
+            {current !== "about" && current !== "store" && (
               <Link
                 to="/about"
                 className="text-base nav-link font-medium text-black transition-all duration-200 "
@@ -109,6 +131,16 @@ const Header = ({ type, current }) => {
               Contest{" "}
             </a>
 
+            {current !== "podcast" && current !== "store" && (
+              <Link
+                to="/podcast"
+                className="text-base nav-link font-medium text-black transition-all duration-200 "
+              >
+                {" "}
+                Podcast
+              </Link>
+            )}
+
             {current !== "gallery" && (
               <Link
                 to="/gallery"
@@ -118,26 +150,19 @@ const Header = ({ type, current }) => {
                 Gallery
               </Link>
             )}
-
-            <a
-              href="#"
-              title=""
-              className="text-base nav-link font-medium text-black transition-all duration-200 "
-            >
-              {" "}
-              Podcast{" "}
-            </a>
           </div>
 
-          <a
-            href="#"
-            title=""
-            className=" items-center justify-center hidden px-4 py-3 ml-10 text-base  font-semibold text-white transition-all ease-in-out duration-300 bg-brown border border-transparent rounded-md lg:inline-flex hover:bg-[#4b010290] focus:bg-[#4b010290]"
-            role="button"
-          >
-            {" "}
-            Visit Store{" "}
-          </a>
+          {current !== "store" && (
+            <Link
+              to="/store"
+              title=""
+              className=" items-center justify-center hidden px-4 py-3 ml-10 text-base  font-semibold text-white transition-all ease-in-out duration-300 bg-brown border border-transparent rounded-md lg:inline-flex hover:bg-[#4b010290] focus:bg-[#4b010290]"
+              role="button"
+            >
+              {" "}
+              Visit Store{" "}
+            </Link>
+          )}
         </nav>
 
         {/* for small device */}
@@ -222,17 +247,19 @@ const Header = ({ type, current }) => {
             </div>
           </div>
 
-          <div className="px-6 mt-6">
-            <a
-              href="#"
-              title=""
-              className="inline-flex justify-center px-4 py-3 text-base font-semibold text-white transition-all duration-200 bg-brown border border-transparent rounded-md tems-center hover:bg-blue-700 focus:bg-blue-700"
-              role="button"
-            >
-              {" "}
-              Visit Store{" "}
-            </a>
-          </div>
+          {current !== "store" && (
+            <div className="px-6 mt-6">
+              <Link
+                to="/"
+                title=""
+                className="inline-flex justify-center px-4 py-3 text-base font-semibold text-white transition-all duration-200 bg-brown border border-transparent rounded-md tems-center hover:bg-blue-700 focus:bg-blue-700"
+                role="button"
+              >
+                {" "}
+                Visit Store{" "}
+              </Link>
+            </div>
+          )}
         </nav>
       </div>
     </header>

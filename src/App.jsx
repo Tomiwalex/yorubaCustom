@@ -6,6 +6,7 @@ import ContactPage from "./pages/ContactPage";
 import GalleryPage from "./pages/GalleryPage";
 import LandingPage from "./pages/LandingPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import StorePage from "./pages/StorePage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/about" Component={AboutPage} />
           <Route path="/contact" Component={ContactPage} />
           <Route path="/gallery" Component={GalleryPage} />
+          <Route path="/store" Component={StorePage} />
           <Route path="*" Component={LandingPage} />
         </Routes>
       </BrowserRouter>

@@ -40,6 +40,8 @@ const BlogPage = () => {
               <p className="mt-6 text-sm font-normal text-gray-600 ">
                 November 22, 2021
               </p>
+
+              {/* title */}
               <p className="mt-2 text-lg font-bold text-gray-900">
                 The Significance of the Gelede Festival
               </p>
