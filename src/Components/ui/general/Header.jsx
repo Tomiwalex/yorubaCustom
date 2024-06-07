@@ -250,7 +250,7 @@ const Header = ({ type, current }) => {
           {current !== "store" && (
             <div className="px-6 mt-6">
               <Link
-                to="/"
+                to="/store"
                 title=""
                 className="inline-flex justify-center px-4 py-3 text-base font-semibold text-white transition-all duration-200 bg-brown border border-transparent rounded-md tems-center hover:bg-blue-700 focus:bg-blue-700"
                 role="button"
