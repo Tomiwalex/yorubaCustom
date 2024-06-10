@@ -1,33 +1,19 @@
 import { Link } from "react-router-dom";
 import whiteLogo from "../../../assets/icons/logo-white.png";
 
+import NewsForm from "../general/NewsForm.jsx";
+
 const Footer = () => {
   return (
     <footer className="bg-[#2b090a]">
-      <div className="container max-w-[1200px] px-6 py-12 mx-auto">
+      <div className="container max-w-[1700px] px-5 md:px-[50px] lg:px-[100px] py-12 pt-16 mx-auto">
         <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
           <div className="col-span-2">
             <h1 className="max-w-lg text-xl font-semibold tracking-tight mb-2 text-white  xl:text-2xltext-white">
-              Subscribe to our newsletter to get update.
+              Join The Yoruba Custom Community
             </h1>
 
-            <form className="overflow-hidden max-w-[306px] mt-3 border-[2px] border-[#fff] flex justify-between items-center rounded-md  text-sm mb-3">
-              <input
-                type="email"
-                name="email"
-                id=""
-                placeholder="Enter your email"
-                className="ml-2 focus:outline-none inline-block bg-transparent"
-                required
-                autoComplete="off"
-              />
-
-              <input
-                type="submit"
-                value="Subscribe"
-                className=" hover:text-[#4b0102] font-bold focus:text-[#4b0102] focus:outline-none bg-white p-3 lg:p-4 color-brown transition-all duration-300 ease-in-out rounded-md hover:bg-white focus:bg-white hover:ring-[1px] hover:ring-[#4b1012]"
-              />
-            </form>
+            <NewsForm />
           </div>
 
           <div>

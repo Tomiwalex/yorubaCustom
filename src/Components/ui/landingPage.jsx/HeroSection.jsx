@@ -16,14 +16,14 @@ import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
-    <section className=" lg:min-h-[100dvh] flex flex-col">
+    <section className=" lg:min-h-[100dvh]  2xl:min-h-[95dvh] 2xlmin-h- flex flex-col bg-[#2b090a]">
       <div className="sticky top-0 z-[10]">
         <Header current="home" />
       </div>
 
-      <div className="relative pb-12 lg:py-20 lg:pt-10 xl:pb-20 h-full flex-1 bg-[#2b090a] lg:flex">
+      <div className="relative pb-12 lg:py-20 lg:pt-10 xl:pb-20 h-full flex-1 bg-[#2b090a] ">
         <div className="absolute inset-0  hidden lg:block">
-          {/* brown overlay */}
+          {/* yellow circle underlay */}
           <div className="absolute z-[1]  w-[45dvw] h-[45dvw]  left-[52dvw] bottom-[-5dvw] rounded-full bg-[#fcb92d90]"></div>
 
           {/*slider Image for large screen */}
@@ -44,7 +44,7 @@ const HeroSection = () => {
           >
             <SwiperSlide>
               <img
-                className="object-cover object-left w-full h-full"
+                className="object-left object-cover w-full h-full"
                 src={festivalImage}
                 alt=""
               />
@@ -60,7 +60,7 @@ const HeroSection = () => {
 
             <SwiperSlide>
               <img
-                className="object-cover object-center w-full ml-auto h-full"
+                className="object-cover object-right w-full ml-auto h-full"
                 src={slide5Image}
                 alt=""
               />
@@ -83,7 +83,7 @@ const HeroSection = () => {
           className=" relative px-5 md:px-[50px] lg:px-[100px] z-[4] my-auto"
         >
           <div className="max-w-xl mx-auto text-center lg:justify-center lg:max-w-md xl:max-w-lg lg:text-left lg:mx-0 lg:h-full  my-auto">
-            <div className="blur-circle h-40 w-40 absolute blur-[70px] rounded-full z-[0] lg:z-[-1]"></div>
+            <div className="blur-circle h-40 w-40 absolute blur-[70px] rounded-full z-[-1]"></div>
 
             <h1 className="mt-12 lg:mt-0 text-[36px] leading-[1.3] font-bold text-white lg:text-[65px] xl:leading-tight">
               Preserving Our Custom
@@ -97,7 +97,7 @@ const HeroSection = () => {
 
             <Link
               to=""
-              className="p-4 hover:shadow-white hover:shadow-lg transition-all duration-300 ease-in-out px-10 font-bold rounded-full text-white bg-[#FCB92D] mt-7 inline-block"
+              className="p-4 hover:shadow-[#fcb92d30] hover:shadow-lg transition-all duration-300 ease-in-out px-10 font-bold rounded-full text-white bg-[#FCB92D] mt-7 inline-block"
             >
               Explore
             </Link>

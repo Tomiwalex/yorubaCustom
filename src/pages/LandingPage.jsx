@@ -78,8 +78,8 @@ const LandingPage = () => {
       <div>
         <HeroSection />
         <FeaturesSection />
-        <Feature2 />
         <Feature3Section />
+        <Feature2 />
         <StoreSection />
         <BlogSection />
         <Footer />

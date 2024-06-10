@@ -1,5 +1,7 @@
 // import artifactImg from "../../../assets/images/artifact-image.jpg";
 
+import NewsForm from "../general/NewsForm";
+
 const StoreSection = () => {
   return (
     <div
@@ -9,22 +11,18 @@ const StoreSection = () => {
       className="bg-[] py-16 relative bgimg"
     >
       <div className="absolute inset-0 bg-gradient-to-r from-[#4b0102] from-50% to-[#4b101299] z-[0]"></div>
-      <div className="max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8 relative index-[1]">
-        <h2 className="text-2xl lg:text-3xl text-white font-bold">
-          Shop Yoruba Culture
-        </h2>
-        <p className="text-white text-base mt-2 md:max-w-[350px] lg:max-w-[550px]">
-          Each item is crafted with care and carries the essence of our rich
-          heritage. Explore our collection and find the perfect piece to connect
-          with Yoruba culture.
-        </p>
+      <div className="max-w-[1700px] mx-auto px-5 md:px-[50px] lg:px-[100px] relative index-[1]">
+        <div className="bg-[#2b090a40] rounded-xl border-[#2b090a] border-[2px] backdrop-blur-lg px-5 md:px-[50px] lg:px-[100px] py-10 lg:py-16 ">
+          <h2 className="text-2xl lg:text-3xl text-white font-bold">
+            Join The Yoruba Custom Community
+          </h2>
+          <p className="text-white text-base mt-2 md:max-w-[350px] lg:max-w-[550px] mb-5">
+            Catch all the gist about upcoming events, offers, products, and the
+            things we are up to at Ile Adulawo sent directly to your inbox.
+          </p>
 
-        <a
-          href="#"
-          className="inline-block p-3 lg:p-4 bg-white rounded-md my-5 font-medium"
-        >
-          Visit Store
-        </a>
+          <NewsForm />
+        </div>
       </div>
     </div>
   );
