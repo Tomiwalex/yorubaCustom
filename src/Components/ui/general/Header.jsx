@@ -12,8 +12,8 @@ const Header = ({ type, current }) => {
       style={{ backgroundColor: type == 1 ? "#ffffff99" : "#fff" }}
       className=" lg:pb-0  backdrop-blur-sm"
     >
-      <div className=" mx-auto container max-w-7xl sm:px-6 lg:px-8">
-        <nav className="flex items-center justify-between h-12 lg:h-20">
+      <div className=" lg:py-5 py-3 px-5 md:px-[50px] lg:px-[100px]">
+        <nav className="flex items-center justify-between h-10 lg:h-12">
           <div className="flex-shrink-0 mr-3  lg:flex-1">
             <Link to="/" title="" className="flex">
               <img
@@ -21,10 +21,8 @@ const Header = ({ type, current }) => {
                   bottom:
                     current == "store" || current === "home" ? "5px" : "0px",
                 }}
-                className="relative w-[90px] lg:w-[110px] h-auto"
-                src={
-                  current === "store" || current === "home" ? brownLogo : logo
-                }
+                className="relative w-[70px] lg:w-[90px] h-auto"
+                src={current === "store" ? brownLogo : logo}
                 alt="logo"
               />
             </Link>
@@ -85,7 +83,7 @@ const Header = ({ type, current }) => {
             {current !== "home" && (
               <Link
                 to="/"
-                className="text-base nav-link font-medium text-black transition-all duration-200 "
+                className="text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 "
               >
                 {" "}
                 Home{" "}
@@ -95,7 +93,7 @@ const Header = ({ type, current }) => {
             {current !== "blog" && current !== "store" && (
               <Link
                 to="/blog"
-                className="text-base nav-link font-medium text-black transition-all duration-200 "
+                className="text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 "
               >
                 {" "}
                 Blog{" "}
@@ -105,7 +103,7 @@ const Header = ({ type, current }) => {
             {current !== "about" && current !== "store" && (
               <Link
                 to="/about"
-                className="text-base nav-link font-medium text-black transition-all duration-200 "
+                className="text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 "
               >
                 {" "}
                 About
@@ -115,7 +113,7 @@ const Header = ({ type, current }) => {
             {current !== "contact" && (
               <Link
                 to="/contact"
-                className="text-base nav-link font-medium text-black transition-all duration-200 "
+                className="text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 "
               >
                 {" "}
                 Contact
@@ -125,7 +123,7 @@ const Header = ({ type, current }) => {
             <a
               href="#"
               title=""
-              className="text-base nav-link font-medium text-black transition-all duration-200 "
+              className="text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 "
             >
               {" "}
               Contest{" "}
@@ -134,7 +132,7 @@ const Header = ({ type, current }) => {
             {current !== "podcast" && current !== "store" && (
               <Link
                 to="/podcast"
-                className="text-base nav-link font-medium text-black transition-all duration-200 "
+                className="text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 "
               >
                 {" "}
                 Podcast
@@ -144,7 +142,7 @@ const Header = ({ type, current }) => {
             {current !== "gallery" && (
               <Link
                 to="/gallery"
-                className="text-base nav-link font-medium text-black transition-all duration-200 "
+                className="text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 "
               >
                 {" "}
                 Gallery
@@ -156,7 +154,7 @@ const Header = ({ type, current }) => {
             <Link
               to="/store"
               title=""
-              className=" items-center justify-center hidden px-4 py-3 ml-10 text-base  font-semibold text-white transition-all ease-in-out duration-300 bg-brown border border-transparent rounded-md lg:inline-flex hover:bg-[#4b010290] focus:bg-[#4b010290]"
+              className=" items-center justify-center hidden px-4 py-3 ml-10 text-base  font-semibold text-white transition-all ease-in-out duration-300 bg-brown border border-transparent rounded-md lg:inline-flex hover:bg-[#4b010290] focus:bg-gradient from-[#4b010250] to-[#320303]"
               role="button"
             >
               {" "}
@@ -177,7 +175,7 @@ const Header = ({ type, current }) => {
                 <Link
                   to="/"
                   title=""
-                  className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
+                  className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
                 >
                   {" "}
                   Home{" "}
@@ -188,7 +186,7 @@ const Header = ({ type, current }) => {
                 <Link
                   to="/about"
                   title=""
-                  className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
+                  className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
                 >
                   {" "}
                   About{" "}
@@ -199,7 +197,7 @@ const Header = ({ type, current }) => {
                 <Link
                   to="/blog"
                   title=""
-                  className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
+                  className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
                 >
                   {" "}
                   Blog{" "}
@@ -210,7 +208,7 @@ const Header = ({ type, current }) => {
                 <Link
                   to="/contact"
                   title=""
-                  className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
+                  className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
                 >
                   {" "}
                   Contact{" "}
@@ -219,7 +217,7 @@ const Header = ({ type, current }) => {
               <a
                 href="#"
                 title=""
-                className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
+                className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
               >
                 {" "}
                 Contest{" "}
@@ -229,7 +227,7 @@ const Header = ({ type, current }) => {
                 <Link
                   to="gallery"
                   title=""
-                  className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
+                  className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
                 >
                   {" "}
                   Gallery{" "}
@@ -239,7 +237,7 @@ const Header = ({ type, current }) => {
               <a
                 href="#"
                 title=""
-                className="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
+                className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
               >
                 {" "}
                 Podcast{" "}

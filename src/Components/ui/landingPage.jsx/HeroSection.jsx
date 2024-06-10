@@ -2,7 +2,9 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import Header from "../general/Header";
 import festivalImage from "../../../assets/images/festival.png";
-import festivalImage3 from "../../../assets/images/festival3.jpg";
+import slide3Image from "../../../assets/images/slide-3-image.png";
+import slide4Image from "../../../assets/images/slide-4-image.png";
+import slide5Image from "../../../assets/images/slide-5-image.png";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Autoplay, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
@@ -10,32 +12,30 @@ import { motion } from "framer-motion";
 import "swiper/css/effect-fade";
 import "swiper/css";
 import "swiper/css/pagination";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
-    <section className="bg-[#4b010205] lg:max-h-dvh">
-      <div className="sticky top-0 bg-red-200 z-[10]">
+    <section className=" lg:min-h-[100dvh] flex flex-col">
+      <div className="sticky top-0 z-[10]">
         <Header current="home" />
       </div>
 
-      <div className="relative pb-12 lg:py-20 lg:pt-10 xl:pb-20">
+      <div className="relative pb-12 lg:py-20 lg:pt-10 xl:pb-20 h-full flex-1 bg-[#2b090a] lg:flex">
         <div className="absolute inset-0  hidden lg:block">
-          {/* white pattern */}
-          {/* <div className="absolute z-[3] w-[45%] h-full bg-[#4b101205] clip-path"></div> */}
-
           {/* brown overlay */}
-          <div className="absolute z-[2] w-full h-full bg-gradient-to-r from-[#fff] from-40% to-[#4b101230]"></div>
+          <div className="absolute z-[1]  w-[45dvw] h-[45dvw]  left-[52dvw] bottom-[-5dvw] rounded-full bg-[#fcb92d90]"></div>
 
           {/*slider Image for large screen */}
 
           <Swiper
-            className="w-[100%] h-full"
-            effect={"fade"}
+            className="w-[50%] ml-[50%] h-full"
+            // effect={"fade"}
             modules={[EffectFade, Autoplay, Pagination]}
             spaceBetween={0}
             slidesPerView={1}
             autoplay={{
-              delay: 3000,
+              delay: 4000,
               disableOnInteraction: false,
             }}
             pagination={{ clickable: true }}
@@ -44,7 +44,7 @@ const HeroSection = () => {
           >
             <SwiperSlide>
               <img
-                className="object-cover object-right-bottom  ml-auto h-full"
+                className="object-cover object-left w-full h-full"
                 src={festivalImage}
                 alt=""
               />
@@ -52,24 +52,24 @@ const HeroSection = () => {
 
             <SwiperSlide>
               <img
-                className="object-cover object-right-bottom w-[80%] ml-auto h-auto"
-                src="https://miro.medium.com/v2/resize:fit:1200/1*u2kX3FFJ5v-AKrfROA4sWw.jpeg"
-                alt=""
-              />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <img
-                className="object-cover object-right-bottom w-[70%] ml-auto h-full"
-                src={festivalImage3}
+                className="object-cover object-right-bottom w-full h-full "
+                src={slide3Image}
                 alt="image 4"
               />
             </SwiperSlide>
 
             <SwiperSlide>
               <img
-                className="object-cover object-right-bottom w-120% ml-auto h-full"
-                src="https://www.propertypro.ng/blog/wp-content/uploads/2017/07/053-what-you-should-know-about-the-yoruba-culture.jpg"
+                className="object-cover object-center w-full ml-auto h-full"
+                src={slide5Image}
+                alt=""
+              />
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <img
+                className="object-cover object-left-bottom w-full ml-auto h-full"
+                src={slide4Image}
                 alt="image 5"
               />
             </SwiperSlide>
@@ -80,72 +80,27 @@ const HeroSection = () => {
         <motion.div
           initial={{ translateY: 50, opacity: 0 }}
           whileInView={{ translateY: 0, opacity: 1 }}
-          className="headline relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl lg:z-[4] h-full"
+          className=" relative px-5 md:px-[50px] lg:px-[100px] z-[4] my-auto"
         >
-          <div className="max-w-xl mx-auto text-center lg:max-w-md xl:max-w-lg lg:text-left lg:mx-0">
-            <div className="blur-circle h-40 w-40 absolute blur-[70px] rounded-full z-[-1]"></div>
-            <h1 className="mt-12 lg:mt-0 text-[36px] leading-[1.3] font-bold color-brown sm:text-4xl xl:text-5xl xl:leading-tight">
-              Preserving Our Cultural Heritage
+          <div className="max-w-xl mx-auto text-center lg:justify-center lg:max-w-md xl:max-w-lg lg:text-left lg:mx-0 lg:h-full  my-auto">
+            <div className="blur-circle h-40 w-40 absolute blur-[70px] rounded-full z-[0] lg:z-[-1]"></div>
+
+            <h1 className="mt-12 lg:mt-0 text-[36px] leading-[1.3] font-bold text-white lg:text-[65px] xl:leading-tight">
+              Preserving Our Custom
             </h1>
-            <p className="headline mt-8 text-base font-normal leading-7 text-[#4b0102] lg:max-w-md xl:pr-0 lg:pr-16">
+            <p className="headline mt-8 text-base font-normal leading-7 text-[white] lg:max-w-md xl:pr-0 lg:pr-16">
               Yoruba customs provide a rich foundation for individuals to learn,
               unlearn, and relearn about the vibrant Yoruba traditions and
               Culture. By highlighting the splendor of Yoruba heritage, we're
               bringing the beauty of our ancestral legacy closer to you.
             </p>
 
-            <h2 className="color-brown font-bold xl:mt-16 mt-8 my-2 text-xl">
-              Subscribe to our news letter
-            </h2>
-            <div className="flex-wrap flex items-center justify-center  space-x-5  lg:justify-start">
-              <form className="border-[2px] border-[#4b0102] flex justify-between items-center rounded-lg  text-sm mb-3">
-                <input
-                  type="email"
-                  name="email"
-                  id=""
-                  placeholder="Enter your email"
-                  className="focus:outline-none ml-2 inline-block bg-transparent"
-                  required
-                  autoComplete="off"
-                />
-
-                <input
-                  type="submit"
-                  value="Subscribe"
-                  className=" hover:text-[#4b0102] font-bold focus:text-[#4b0102] focus:outline-none bg-brown p-3 lg:p-4 text-white transition-all duration-300 ease-in-out rounded-md hover:bg-white focus:bg-white hover:ring-[1px] hover:ring-[#4b1012]"
-                />
-              </form>
-
-              {/* Watch video */}
-              {/* <a
-                href="#"
-                title=""
-                className="
-                            inline-flex
-                            items-center
-                            justify-center
-                            px-2
-                            py-4
-                            text-base
-                            font-bold
-                            leading-7
-                            color-brown
-                            mb-3
-                           
-                            bg-white
-                            border-[2px] border-[#4b0102]
-                            rounded-md
-                            sm:px-4
-                            
-                            ] 
-                            focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#4b0102] focus:ring-white
-                            hover:bg-[#4b1012] hover:text-white focus:text-white transition-all duration-300 ease-in-out
-                        "
-                role="button"
-              >
-                Watch Video
-              </a> */}
-            </div>
+            <Link
+              to=""
+              className="p-4 hover:shadow-white hover:shadow-lg transition-all duration-300 ease-in-out px-10 font-bold rounded-full text-white bg-[#FCB92D] mt-7 inline-block"
+            >
+              Explore
+            </Link>
           </div>
         </motion.div>
 

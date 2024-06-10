@@ -97,8 +97,8 @@
 .swiper-pagination {
   bottom: 100px !important;
   z-index: 20 !important;
-  margin-left: 40%;
-  width: 60% !important;
+  /* margin-left: 40%; */
+  width: 100% !important;
 }
 
 .swiper-pagination-bullet {

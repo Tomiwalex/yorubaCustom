@@ -9,7 +9,7 @@ const FeaturesSection = () => {
             Ṣíṣe Àfihàn Ogún Àṣà Wa
           </h2>
 
-          <h3 className="text-[#013501] text-lg lg:text-xl font-bold mt-3">
+          <h3 className="text-[#ad7906] text-lg lg:text-xl font-bold mt-3">
             (Showcasing our cultural inheritance)
           </h3>
           <p className="mt-4 text-base leading-7 text-gray-600 sm:mt-8 max-w-4xl mx-auto">
@@ -64,7 +64,7 @@ const FeaturesSection = () => {
           <motion.div
             initial={{ translateY: 100, opacity: 0 }}
             whileInView={{ translateY: 0, opacity: 1 }}
-            className="p-6 py-10 md:p-8 lg:p-14 md:border-l md:border-gray-200 relative bg-[#013501] rounded-3xl lg:mx-3 "
+            className="p-6 py-10 md:p-8 lg:p-14 md:border-l md:border-gray-200 relative bg-[#c38f1d] rounded-3xl lg:mx-3 "
           >
             <span className="material-symbols-outlined text-7xl text-white font-medium">
               dynamic_feed
