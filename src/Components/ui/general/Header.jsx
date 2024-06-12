@@ -154,7 +154,7 @@ const Header = ({ type, current }) => {
             <Link
               to="/store"
               title=""
-              className=" items-center justify-center hidden px-4 py-3 ml-10 text-base  font-semibold text-white transition-all ease-in-out duration-300 bg-brown border border-transparent rounded-md lg:inline-flex hover:bg-[#4b010290] focus:bg-gradient from-[#4b010250] to-[#320303]"
+              className=" items-center justify-center hidden px-4 py-3 ml-10 text-base  font-semibold text-white transition-all ease-in-out duration-300 bg-brown border border-transparent rounded lg:inline-flex hover:bg-[#4b010290] focus:bg-gradient from-[#4b010250] to-[#320303]"
               role="button"
             >
               {" "}
@@ -234,14 +234,15 @@ const Header = ({ type, current }) => {
                 </Link>
               )}
 
-              <a
-                href="#"
-                title=""
-                className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
-              >
-                {" "}
-                Podcast{" "}
-              </a>
+              {current !== "podcast" && (
+                <Link
+                  to="/podcast"
+                  className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
+                >
+                  {" "}
+                  Podcast{" "}
+                </Link>
+              )}
             </div>
           </div>
 

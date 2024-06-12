@@ -21,7 +21,12 @@ const HeroSection = () => {
         <Header current="home" />
       </div>
 
-      <div className="relative pb-12 lg:py-20 lg:pt-10 xl:pb-20 h-full flex-1 bg-[#2b090a] ">
+      {/* overlay-dot */}
+      <span className="material-symbols-outlined absolute inset-0 text-[#ffffff05] w-full text-[100dvh] z-[0]">
+        blur_on
+      </span>
+
+      <div className="relative z-[2] pb-12 lg:py-20 lg:pt-10 xl:pb-20 h-full flex-1  ">
         <div className="absolute inset-0  hidden lg:block">
           {/* yellow circle underlay */}
           <div className="absolute z-[1]  w-[45dvw] h-[45dvw]  left-[52dvw] bottom-[-5dvw] rounded-full bg-[#fcb92d90]"></div>
@@ -97,9 +102,10 @@ const HeroSection = () => {
 
             <Link
               to=""
-              className="p-4 hover:shadow-[#fcb92d30] hover:shadow-lg transition-all duration-300 ease-in-out px-10 font-bold rounded-full text-white bg-[#FCB92D] mt-7 inline-block"
+              className="p-4 hover:shadow-[#fcb92d30] hover:shadow-lg transition-all duration-300 ease-in-out px-10 font-bold rounded-full text-white bg-[#FCB92D] mt-7 inline-flex  items-center"
             >
               Explore
+              <span className="material-symbols-outlined ml-2">stacks</span>
             </Link>
           </div>
         </motion.div>

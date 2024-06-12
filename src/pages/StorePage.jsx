@@ -5,8 +5,8 @@ const StorePage = () => {
     <div>
       <Header current={"store"} />
 
-      <section className="border-t-[1px]">
-        <div className="flex max-w-[1200px] lg:mx-auto p-3 mx-5  bg-gray-200 rounded-md my-5 lg:my-10">
+      <section className="border-t-[1px] lg:px-[100px]">
+        <div className="flex max-w-[1700px] lg:mx-auto p-3 mx-5   bg-gray-200 rounded-md my-5 lg:my-10">
           {/* filter */}
           <div className="overflow-hidden max-w-[45%] bg-white  gap-x-5 p-2 lg:p-3 rounded-md flex items-center">
             <span className="material-symbols-outlined">tune</span>

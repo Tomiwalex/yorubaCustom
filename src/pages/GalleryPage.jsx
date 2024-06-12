@@ -58,17 +58,17 @@ const GalleryPage = () => {
     <div>
       <Header current="gallery" />
 
-      <div className="font-julee text-[#fcb92d] py-20 px-5 lg:p-[120px] bg-[#2b090a99]  lg:text-center relative overflow-hidden">
+      <div className="font-julee text-[#fcb92d] py-20 px-5 lg:p-[120px] bg-[#2b090a99]  lg:text-center relative overflow-hidden min-h-[50dvh]">
         <img
           src="https://render.fineartamerica.com/images/images-profile-flow/400/images/artworkimages/mediumlarge/3/yoruba-hausa-ibo-musicians-2-paul-gbolade-omidiran.jpg"
           alt="image"
           className="absolute w-full inset-0 z-[-1] object-cover h-full"
         />
 
-        <h1 className="text-3xl lg:text-5xl font-bold">
+        <h1 className="text-3xl lg:text-7xl font-extrabold">
           Explore the Richness of Yoruba Culture
         </h1>
-        <p className="font-semmibold text-base lg:text-xl mt-3 leading-[1.6]">
+        <p className="font-semibold text-base lg:text-xl mt-3 leading-[1.6]">
           Welcome to the Ọmọ Oòduà Creations Gallery, a visual journey through
           the vibrant and diverse world of Yoruba culture. Here, we showcase the
           artistry, craftsmanship, and traditions that define our heritage. Each
@@ -78,13 +78,14 @@ const GalleryPage = () => {
       </div>
 
       <section className="bg-[#4b101210] py-16 lg:py-20">
-        <div className="max-w-[1200px] mx-auto px-5">
-          <h1 className="text-2xl lg:text-3xl font-bold color-brown">
+        <div className="max-w-[1700px] mx-auto px-5">
+          <h1 className="text-2xl lg:text-3xl font-bold color-brown flex items-center">
             Art and Craftsmanship
+            <span className="material-symbols-outlined ml-2">ssid_chart</span>
           </h1>
 
           {/* the art grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-12 gap-y-12 lg:gap-y-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 mt-12 gap-y-12 lg:gap-y-10">
             {data.map((item, index) => {
               return (
                 <motion.div

@@ -39,23 +39,25 @@ const Feature3Section = () => {
           </h2>
         </div>
 
-        <div className="relative grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2  gap-y-10 md:grid-cols-4 lg:gap-x-4 md:gap-2 xl:mt-24">
+        <div className="relative grid grid-cols-1 mt-10  sm:mt-16 sm:grid-cols-2  gap-y-10 md:grid-cols-4 lg:gap-x-4 md:gap-2 xl:mt-24">
           {data.map((item, index) => {
             return (
               <div
                 key={index}
-                className="hover:bg-[white] hover:text-[#4b1012] transition-all duration-300 ease-in-out p-4 py-10 md:p-6 lg:p-8 relative rounded-3xl  bg-[#fff] text-[#4b1012] backdrop-blur-sm "
+                className="hover:bg-[white] hover:text-[#4b1012] transition-all duration-300 ease-in-out p-4 py-10 md:p-6 lg:py-8 lg:px-5 relative rounded-md  bg-[#fff] text-[#4b1012] backdrop-blur-sm group "
               >
                 {/* bg image*/}
-                <span className="material-symbols-outlined text-[45px] font-medium">
+                <span className="bg-[#4b101220] p-4 rounded-full material-symbols-outlined text-[36px] mb-3 font-medium group-hover:bg-[#4b1012] group-hover:text-white transition-all duration-300 ease-in-out">
                   {item.icon}
                 </span>
 
-                <h3 className=" text-xl lg:text-3xl font-bold  font-pj">
+                <h3 className=" text-xl lg:text-3xl font-semibold  font-pj">
                   {item.title}
                 </h3>
 
-                <p className="mt-5 text-base leading-[1.6]">{item.text}</p>
+                <p className="mt-5 text-base font-medium leading-[1.6]">
+                  {item.text}
+                </p>
               </div>
             );
           })}
