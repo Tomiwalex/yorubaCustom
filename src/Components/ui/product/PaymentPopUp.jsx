@@ -2,7 +2,7 @@
 const PaymentPopUp = ({ setFormShown }) => {
   return (
     <div className="absolute z-10 bg-[#00000090] backdrop-blur-sm inset-0 p-5 md:p-[50px] lg:p-[100px]">
-      <div className="rounded w-[100%] cursor-pointer max-w-[350px] bg-white p-4 ml-auto">
+      <div className="rounded w-[100%] cursor-pointer md:max-w-[350px] bg-white p-4 ml-auto">
         {/* cancel button */}
         <span
           onClick={() => setFormShown(false)}
