@@ -6,6 +6,7 @@ import ContactPage from "./pages/ContactPage";
 import GalleryPage from "./pages/GalleryPage";
 import PodcastPage from "./pages/PodcastPage";
 import LandingPage from "./pages/LandingPage";
+import ProductDetails from "./pages/ProductDetails.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import StorePage from "./pages/StorePage";
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/contact" Component={ContactPage} />
           <Route path="/gallery" Component={GalleryPage} />
           <Route path="/store" Component={StorePage} />
+          <Route path="/store/:id" Component={ProductDetails} />
           <Route path="/podcast" Component={PodcastPage} />
           <Route path="*" Component={LandingPage} />
         </Routes>

@@ -54,12 +54,12 @@ const Footer = () => {
             <p className="font-semibold text-white">Company</p>
 
             <div className="flex flex-col items-start mt-5 space-y-2">
-              <a
-                href="#"
+              <Link
+                to="/store"
                 className="transition-colors duration-300 text-gray-300  hover:underline hover:text-blue-500"
               >
                 Store
-              </a>
+              </Link>
 
               <Link
                 to="/gallery"

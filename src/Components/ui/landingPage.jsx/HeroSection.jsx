@@ -22,7 +22,7 @@ const HeroSection = () => {
       </div>
 
       {/* overlay-dot */}
-      <span className="material-symbols-outlined absolute inset-0 text-[#ffffff05] w-full text-[100dvh] z-[0]">
+      <span className="material-symbols-outlined absolute inset-0 text-[#ffffff08] w-full text-[100dvh] z-[0]">
         blur_on
       </span>
 
