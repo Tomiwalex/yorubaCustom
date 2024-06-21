@@ -1,7 +1,13 @@
+/* eslint-disable no-unused-vars */
 import { Link } from "react-router-dom";
 import BlogCard from "../blog/BlogCard";
+import useGetData from "../../../hooks/useGetData";
+import ErrorPopup from "../general/ErrorPopup";
+import SkeletalLoading from "../general/SkeletalLoading";
 
 const BlogSection = () => {
+  const { data, loading, error } = useGetData("/blog");
+
   return (
     <section className="py-20 bg-white lg:py-20 min-h-[100dvh] flex flex-col">
       <div className="mx-auto max-w-[1700px] px-5 h-full md:px-[50px] lg:px-[100px] ">
@@ -24,10 +30,32 @@ const BlogSection = () => {
           </Link>
         </div>
 
+        {error && (
+          <div className="flex justify-center w-full mt-10">
+            <ErrorPopup error={error + ", reload the page to refetch"} />
+          </div>
+        )}
+
         <div className="h-full grid max-w-[1700px] grid-cols-1  mt-14  sm:mt-16 sm:text-left sm:grid-cols-3 gap-y-14 gap-x-5 ">
-          <BlogCard />
-          <BlogCard />
-          <BlogCard />
+          {/* loading state */}
+          {loading &&
+            [1, 2, 3, 4, 5].map((item, index) => {
+              return (
+                <SkeletalLoading
+                  backgroundColor={"white"}
+                  key={index}
+                  height={"60dvh"}
+                  width={"100%"}
+                />
+              );
+            })}
+
+          {data &&
+            data?.data?.length &&
+            !loading &&
+            data?.data.map((item, index) => (
+              <BlogCard item={item} key={index} />
+            ))}
         </div>
       </div>
     </section>

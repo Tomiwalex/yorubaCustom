@@ -1,8 +1,14 @@
+/* eslint-disable no-unused-vars */
 import Header from "../Components/ui/general/Header";
 import Footer from "../Components/ui/general/Footer";
 import BlogCard from "../Components/ui/blog/BlogCard";
+import useGetData from "../hooks/useGetData";
+import ErrorPopup from "../Components/ui/general/ErrorPopup";
+import SkeletalLoading from "../Components/ui/general/SkeletalLoading";
 
 const BlogPage = () => {
+  const { data, loading, error } = useGetData("/blog");
+
   return (
     <div>
       <Header current={"blog"} />
@@ -28,11 +34,32 @@ const BlogPage = () => {
             Recent blogs
           </h2>
 
+          {error && (
+            <div className="flex justify-center w-full mt-10">
+              <ErrorPopup error={error + ", reload the page to refetch"} />
+            </div>
+          )}
+
           <div className="grid max-w-[1700px] grid-cols-1 mx-auto mt-3  sm:mt-5 sm:text-left sm:grid-cols-4 gap-y-8 gap-x-5">
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
+            {/* loading state */}
+            {loading &&
+              [1, 2, 3, 4, 5].map((item, index) => {
+                return (
+                  <SkeletalLoading
+                    backgroundColor={"white"}
+                    key={index}
+                    height={"60dvh"}
+                    width={"100%"}
+                  />
+                );
+              })}
+
+            {data &&
+              data?.data?.length &&
+              !loading &&
+              data?.data.map((item, index) => (
+                <BlogCard item={item} key={index} />
+              ))}
           </div>
         </div>
       </section>

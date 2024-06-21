@@ -16,13 +16,13 @@ import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
-    <section className=" lg:min-h-[100dvh]  2xl:min-h-[95dvh] 2xlmin-h- flex flex-col bg-[#2b090a]">
+    <section className=" lg:min-h-[100dvh]  2xl:min-h-[95dvh] 2xlmin-h- flex flex-col bg-[#2b090a] relative">
       <div className="sticky top-0 z-[10]">
         <Header current="home" />
       </div>
 
       {/* overlay-dot */}
-      <span className="material-symbols-outlined absolute inset-0 text-[#ffffff08] w-full text-[100dvh] z-[0]">
+      <span className="material-symbols-outlined absolute inset-0 text-[#ffffff08] w-full  z-[0]">
         blur_on
       </span>
 

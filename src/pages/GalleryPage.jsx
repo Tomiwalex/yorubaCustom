@@ -1,59 +1,12 @@
+/* eslint-disable no-unused-vars */
 import Header from "../Components/ui/general/Header";
 import { motion } from "framer-motion";
+import useGetData from "../hooks/useGetData";
+import SkeletalLoading from "../Components/ui/general/SkeletalLoading";
+import ErrorPopup from "../Components/ui/general/ErrorPopup";
 
 const GalleryPage = () => {
-  // dummy data
-  const data = [
-    {
-      title: "Yoruba",
-      imageUrl:
-        "https://images.saatchiart.com/saatchi/1467899/art/10491205/9553697-WMNDDRXS-7.jpg",
-      description: "Art drawn buy the best graduating stud...",
-    },
-    {
-      title: "Yoruba",
-      imageUrl:
-        "https://images.saatchiart.com/saatchi/62723/art/7498381/6567309-HSC00001-7.jpg",
-      description: "Art drawn buy the best graduating stud...",
-    },
-    {
-      title: "Yoruba",
-      imageUrl:
-        "https://www.grainsofafrica.com/wp-content/uploads/2013/08/Owambe-large.jpg",
-      description: "Art drawn buy the best graduating stud...",
-    },
-    {
-      title: "Yoruba",
-      imageUrl:
-        "https://art635.gallery/wp-content/uploads/2016/10/2.-Umeh-Bede-2013-34x48%EF%80%A0_-1193x620.jpg",
-      description: "Art drawn buy the best graduating stud...",
-    },
-    {
-      title: "Yoruba",
-      imageUrl:
-        "https://s.abcnews.com/images/Entertainment/HT_body_paint_01_as_160426_16x9_992.jpg",
-      description: "Art drawn buy the best graduating stud...",
-    },
-    {
-      title: "Yoruba",
-      imageUrl:
-        "https://art635.gallery/wp-content/uploads/2016/10/2.-Umeh-Bede-2013-34x48%EF%80%A0_-1193x620.jpg",
-      description: "Art drawn buy the best graduating stud...",
-    },
-    {
-      title: "Yoruba",
-      imageUrl:
-        "https://images.saatchiart.com/saatchi/62723/art/5501129/4570941-YAWZUEKI-6.jpg",
-      description: "Art drawn buy the best graduating stud...",
-    },
-    {
-      title: "Yoruba",
-      imageUrl:
-        "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/yoruba-drumming-culture-from-nigeria-chioma-kanu.jpg",
-      description: "Art drawn buy the best graduating stud...",
-    },
-  ];
-
+  const { data, loading, error } = useGetData("/gallery");
   return (
     <div>
       <Header current="gallery" />
@@ -84,37 +37,71 @@ const GalleryPage = () => {
             <span className="material-symbols-outlined ml-2">ssid_chart</span>
           </h1>
 
+          {error && (
+            <div className="flex justify-center w-full mt-10">
+              <ErrorPopup error={error + ", reload the page to refetch"} />
+            </div>
+          )}
+
           {/* the art grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 mt-12 gap-y-12 lg:gap-y-10">
-            {data.map((item, index) => {
-              return (
-                <motion.div
-                  initial={{ opacity: 0, translateY: 70 }}
-                  whileInView={{ opacity: 1, translateY: 0 }}
-                  key={index}
-                  className="bg-white rounded-md shadow-sm overflow-hidden cursor-pointer"
-                >
-                  {/* image */}
-                  <div className=" lg:h-[290px] group overflow-hidden aspect-w-9 aspect-h-16 h-[270px]">
-                    <img
-                      className="h-full object-cover w-full  transition-all duration-300 transform group-hover:scale-125"
-                      src={item.imageUrl}
-                      alt={`${item.title} image`}
-                    />
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-5 mt-12 gap-y-12 lg:gap-y-10">
+            {loading &&
+              [1, 2, 3, 4, 5].map((item, index) => {
+                return (
+                  <SkeletalLoading
+                    backgroundColor={"white"}
+                    key={index}
+                    height={"250px"}
+                    width={"100%"}
+                  />
+                );
+              })}
 
-                  {/* title */}
-                  <p className="mt-3 text-lg font-bold text-gray-900 px-4">
-                    {item.title}
-                  </p>
+            {data &&
+              data?.data?.length &&
+              !loading &&
+              data.data.map((item, index) => {
+                return (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    key={index}
+                    className="bg-white rounded-md shadow-sm overflow-hidden cursor-pointer"
+                  >
+                    {/* image */}
+                    <div className="relative lg:h-[290px] group overflow-hidden aspect-w-9 aspect-h-16 h-[270px]">
+                      <img
+                        className="h-full object-cover w-full  transition-all duration-300 transform group-hover:scale-125"
+                        src={item.imageUrl}
+                        alt={`${item.title} image`}
+                      />
 
-                  {/* description */}
-                  <p className="text-sm font-normal text-gray-500 p-4 pt-2">
-                    {item.description}
-                  </p>
-                </motion.div>
-              );
-            })}
+                      {item.type == "image" && (
+                        <span className="material-symbols-outlined absolute top-2 right-3 text-white text-3xl font-bold z-[1]">
+                          image
+                        </span>
+                      )}
+                      {item.type == "video" && (
+                        <a href={item?.externalLink} target="_blank">
+                          <span className="material-symbols-outlined absolute top-[calc(50%-30px)] right-[calc(50%-30px)] text-white text-6xl font-semibold z-[1]">
+                            play_arrow
+                          </span>
+                        </a>
+                      )}
+                    </div>
+
+                    {/* title */}
+                    <p className="mt-3 text-lg font-bold text-gray-900 px-4">
+                      {item.title}
+                    </p>
+
+                    {/* description */}
+                    <p className="text-sm font-normal text-gray-500 p-4 pt-1">
+                      {item.description}
+                    </p>
+                  </motion.div>
+                );
+              })}
           </div>
         </div>
       </section>

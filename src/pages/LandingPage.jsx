@@ -8,6 +8,7 @@ import StoreSection from "../Components/ui/landingPage.jsx/StoreSection";
 import Footer from "../Components/ui/general/Footer";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import NewsForm from "../Components/ui/general/NewsForm";
 
 const LandingPage = () => {
   const [open, setOpen] = useState(true);
@@ -53,23 +54,7 @@ const LandingPage = () => {
                 Subscribe to our news letter to get exciting offers and updates
               </p>
 
-              <form className="relative  border-[1px] overflow-hidden w-[calc(100%-40px)] mx-auto lg:max-w-[300px]  mt-5 border-[#4b0102] flex justify-between items-center rounded-lg text-sm mb-3">
-                <input
-                  type="email"
-                  name="email"
-                  id=""
-                  placeholder="Enter your email"
-                  className="ml-2 focus:outline-none max-w-[70%] inline bg-transparent"
-                  required
-                  autoComplete="off"
-                />
-
-                <input
-                  type="submit"
-                  value="Subscribe"
-                  className=" hover:text-[#4b0102] font-bold focus:text-[#4b0102] focus:outline-none bg-brown p-3 px-1 py-3 lg:p-4 text-white transition-all duration-300 ease-in-out rounded-md hover:bg-[#4b010210] focus:bg-[#4b010210] hover:ring-[1px] hover:ring-[#4b101290]"
-                />
-              </form>
+              <NewsForm type={2} />
             </div>
           </div>
         </motion.div>
