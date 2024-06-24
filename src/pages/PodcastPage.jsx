@@ -1,7 +1,11 @@
 import Header from "../Components/ui/general/Header";
+import SkeletalLoading from "../Components/ui/general/SkeletalLoading";
 import img from "../assets/images/podcast-image.png";
+import useGetData from "../hooks/useGetData";
 
 const PodcastPage = () => {
+  const { data, loading, error } = useGetData("/podcast");
+
   return (
     <div className="">
       {/* <div className="sticky top-0 bg-white z-[6]"> */}
@@ -46,36 +50,67 @@ const PodcastPage = () => {
           </h2>
 
           {/* the podcast */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 mt-10 gap-5">
-            {[1, 2, 3, 4, 5, 6].map((item, index) => {
-              return (
-                <div
-                  key={index}
-                  className="h-[250px] relative overflow-hidden group rounded"
-                >
-                  {/* image */}
-                  <img
-                    src="https://img.freepik.com/free-photo/retro-microphone-isolated-color-background_1387-912.jpg"
-                    alt="pod-image"
-                    className="h-full w-full group-hover:scale-125 transition-all ease-in-out duration-300"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 mt-10 gap-5">
+            {/* loading state */}
+            {loading &&
+              [1, 2, 3, 4, 5].map((item, index) => {
+                return (
+                  <SkeletalLoading
+                    backgroundColor={"#e7e7e7"}
+                    key={index}
+                    height={"300px"}
+                    width={"100%"}
                   />
+                );
+              })}
 
-                  {/* overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/5 to-black/75 flex flex-col justify-between p-4">
-                    <span className="material-symbols-outlined text-white text-2xl inline-block ml-auto">
-                      music_note
-                    </span>
+            {data &&
+              data?.data?.length &&
+              !loading &&
+              data?.data.map((item, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="h-[250px] relative overflow-hidden group rounded"
+                  >
+                    {/* image */}
+                    {item.type === "audio" && (
+                      <img
+                        src={item.imageUrl}
+                        alt="pod-image"
+                        className="h-full w-full group-hover:scale-125 transition-all ease-in-out duration-300"
+                      />
+                    )}
 
-                    <h3 className="text-white font-bold text-2xl flex items-center">
-                      The culture{" "}
-                      <span className="material-symbols-outlined ml-2 tex-3xl font-semibold inline-block">
-                        play_circle
+                    {item.type === "video" && (
+                      <iframe
+                        width="100%"
+                        height="100%"
+                        src={item.embedLink}
+                        title={item.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                      ></iframe>
+                    )}
+
+                    {/* overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-black/5 to-black/75 flex flex-col justify-between p-4">
+                      <span className="material-symbols-outlined text-white text-2xl inline-block ml-auto">
+                        {item.type === "audio" && "music_note"}
                       </span>
-                    </h3>
+
+                      <h3 className="text-white font-bold text-2xl flex items-center">
+                        {item.title}
+                        <span className="material-symbols-outlined ml-2 tex-3xl font-semibold inline-block">
+                          play_circle
+                        </span>
+                      </h3>
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
           </div>
         </div>
       </section>
