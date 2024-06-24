@@ -23,7 +23,7 @@ const NewsForm = ({ type }) => {
       <form
         onSubmit={handleSubmit}
         style={{ borderColor: type == 2 ? "#4b1012" : "#fff" }}
-        className="overflow-hidden max-w-[330px] mt-3 border-[1px] flex justify-between items-center rounded-full  text-sm mb-3"
+        className="overflow-hidden max-w-[280px] lg:max-w-[310px] ml-5 mt-3 border-[1px] flex justify-between items-center rounded-full  text-sm mb-3"
       >
         <input
           type="email"
