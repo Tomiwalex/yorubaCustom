@@ -9,14 +9,14 @@ const BlogSection = () => {
   const { data, loading, error } = useGetData("/blog");
 
   return (
-    <section className="py-20 bg-white lg:py-20 min-h-[100dvh] flex flex-col">
+    <section className="py-20 bg-white lg:py-20 lg:min-h-[80dvh] flex flex-col">
       <div className="mx-auto max-w-[1700px] px-5 h-full md:px-[50px] lg:px-[100px] ">
         <div className=" mx-auto flex flex-wrap justify-between align-top mb-7">
           <div className="mb-5">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl font-pj">
               Read our blog
             </h2>
-            <p className="mt-2 font-normal text-gray-600 max-w-[300px]">
+            <p className="mt-2 font-medium text-gray-600 max-w-[400px]">
               With our blogs, you can gain insights into the Yoruba customs and
               traditions.
             </p>
@@ -36,7 +36,7 @@ const BlogSection = () => {
           </div>
         )}
 
-        <div className="h-full grid max-w-[1700px] grid-cols-1  mt-14  sm:mt-16 sm:text-left sm:grid-cols-3 gap-y-14 gap-x-5 ">
+        <div className="h-full grid max-w-[1700px] grid-cols-1  mt-14  sm:mt-16 sm:text-left sm:grid-cols-4 gap-y-14 gap-x-5 ">
           {/* loading state */}
           {loading &&
             [1, 2, 3, 4, 5].map((item, index) => {
@@ -53,9 +53,10 @@ const BlogSection = () => {
           {data &&
             data?.data?.length &&
             !loading &&
-            data?.data.map((item, index) => (
-              <BlogCard item={item} key={index} />
-            ))}
+            data?.data.map(
+              (item, index) =>
+                index < 4 && <BlogCard item={item} key={index} index={index} />
+            )}
         </div>
       </div>
     </section>

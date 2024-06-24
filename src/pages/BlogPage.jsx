@@ -13,7 +13,7 @@ const BlogPage = () => {
     <div>
       <Header current={"blog"} />
 
-      <section className="py-10 bg-[#4b101210] min-h-[100dvh]">
+      <section className="py-10 bg-[#4b101210] min-h-[100dvh] pb-20">
         <div className="px-5 md:px-[50px] lg:-[100px] mx-auto max-w-[1700px]">
           {/* <div className="blur-circle h-40 w-40 absolute blur-[70px] rounded-full z-[0]"></div> */}
 
@@ -23,15 +23,18 @@ const BlogPage = () => {
                 Read our blog
               </h2>
 
-              <p className="mt-5 font-normal text-base lg:textxl text-gray-800 max-w-[300px] relative z-[1]">
+              <p className="mt-5 font-medium text-base lg:text-lg text-gray-800 max-w-[400px] relative z-[1]">
                 With our blogs, you can gain insights into the Yoruba customs
                 and traditions.
               </p>
             </div>
           </div>
 
-          <h2 className="text-xl font-bold text-gray-900 sm:text-2xl mt-5">
-            Recent blogs
+          <hr className="my-10 h-1 bg-brown" />
+
+          <h2 className="text-xl font-bold text-gray-900 sm:text-2xl mt-5 flex items-center">
+            Recent blogs{" "}
+            <span className="material-symbols-outlined ml-2">tab_recent</span>
           </h2>
 
           {error && (
@@ -58,7 +61,7 @@ const BlogPage = () => {
               data?.data?.length &&
               !loading &&
               data?.data.map((item, index) => (
-                <BlogCard item={item} key={index} />
+                <BlogCard item={item} key={index} index={index} />
               ))}
           </div>
         </div>
