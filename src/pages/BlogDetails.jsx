@@ -35,7 +35,6 @@ const BlogDetails = () => {
         url,
         title: data?.data.title,
         text: "Check out this blog on Yoruba customs and traditions",
-        files: [data?.data.imageUrl],
       });
     } catch (error) {
       console.error("Error sharing:", error);
