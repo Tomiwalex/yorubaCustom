@@ -188,19 +188,16 @@ const ProductDetails = () => {
 
                       {/* name */}
                       <h3 className="text-base lg:text:xl text-gray-800 font-semibold flex items-center mt-2">
-                        reviewer's name
+                        {item.name}
                       </h3>
 
                       <p className="mt-1 text-sm lg:text-base text-gray-500 font-medium leading-[1.6]">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Ullam accusantium, excepturi maxime iste quos nisi illum
-                        quo laboriosam aperiam nostrum vitae expedita? Labore
-                        non animi neque consequuntur accusamus maxime minus?
+                        {item.comment}
                       </p>
 
                       <p className="text-xs lg:text-sm text-gray-600 font-medium leading-[1.6] mt-2">
                         {" "}
-                        10/10/2024
+                        {new Date(item.createdAt).toDateString()}
                       </p>
                     </div>
                   );
