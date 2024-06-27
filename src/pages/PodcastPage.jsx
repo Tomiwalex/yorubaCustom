@@ -1,3 +1,6 @@
+import { useState } from "react";
+import PodcastExpand from "../Components/ui/blog/podcastCard";
+import ErrorPopup from "../Components/ui/general/ErrorPopup";
 import Header from "../Components/ui/general/Header";
 import SkeletalLoading from "../Components/ui/general/SkeletalLoading";
 import img from "../assets/images/podcast-image.png";
@@ -5,15 +8,47 @@ import useGetData from "../hooks/useGetData";
 
 const PodcastPage = () => {
   const { data, loading, error } = useGetData("/podcast");
+  const [videoUrl, setVideoUrl] = useState("");
+  const [isExpanded, setExpanded] = useState(false);
 
   return (
-    <div className="">
+    <div className="bg-[#1a0607]">
       {/* <div className="sticky top-0 bg-white z-[6]"> */}
       <Header current={"podcast"} />
       {/* </div> */}
 
+      {/* video play */}
+      {isExpanded && (
+        <div className="fixed top-0 z-[10] backdrop-blur-md inset-0 left-0 right-0 h-[100dvh] bg-black/80">
+          <div className=" cursor-pointer bg-black p-4 flex justify-between items-center max-w-[100dvw]">
+            <h2 className="text-white text-base lg:text-3xl font-semibold">
+              Yorubacustom / {videoUrl.title}
+            </h2>
+            <span
+              onClick={() => {
+                setExpanded(false);
+                setVideoUrl("");
+              }}
+              className="cursor-pointer material-symbols-outlined ml-2 tex-4xl text-white hover:bg-gray-200 hover:text-black duration-300 ease-in-out p-2 rounded-full font-semibold inline-block"
+            >
+              {" "}
+              close_fullscreen
+            </span>
+          </div>
+          <iframe
+            width="100%"
+            height="100%"
+            src={videoUrl.embedLink}
+            title={videoUrl.title}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      )}
+
       <section className="p-5 lg:px-[50px] 2xl:px-[100px]">
-        <div className="relative overflow-hidden max-w-[1700px] p-5 xl:p-20 mx-auto  mt-5 bg-[#4b101210] rounded flex justify-between items-center gap-y-10 flex-wrap">
+        <div className="relative overflow-hidden max-w-[1700px] p-5 xl:p-20 mx-auto  mt-5 bg-gray-100 rounded flex justify-between items-center gap-y-10 flex-wrap">
           {/* underlay */}
           <span className="block w-[70dvw] h-[70dvw] max-w-[400px] max-h-[400px] border-[8px] border-white rounded-full z-[2] absolute top-[-10%] left-[-10%]"></span>
 
@@ -42,15 +77,21 @@ const PodcastPage = () => {
       {/* podcast section */}
       <section className="p-5 lg:px-[50px] 2xl:px-[100px]">
         <div className="max-w-[1700px] mx-auto  mt-5">
-          <h2 className="text-xl lg:text-2xl 2xl:text-4xl font-bold">
+          <h2 className="text-white text-xl lg:text-2xl 2xl:text-4xl font-bold">
             Our Podcast
             <span className="material-symbols-outlined relative top-1 ml-2">
               podcasts
             </span>
           </h2>
 
+          {error && (
+            <div className="flex justify-center w-full mt-10">
+              <ErrorPopup error={error + ", reload the page to refetch"} />
+            </div>
+          )}
+
           {/* the podcast */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 mt-10 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-5">
             {/* loading state */}
             {loading &&
               [1, 2, 3, 4, 5].map((item, index) => {
@@ -69,46 +110,12 @@ const PodcastPage = () => {
               !loading &&
               data?.data.map((item, index) => {
                 return (
-                  <div
+                  <PodcastExpand
+                    setVideoUrl={setVideoUrl}
+                    setExpanded={setExpanded}
+                    item={item}
                     key={index}
-                    className="h-[250px] relative overflow-hidden group rounded"
-                  >
-                    {/* image */}
-                    {item.type === "audio" && (
-                      <img
-                        src={item.imageUrl}
-                        alt="pod-image"
-                        className="h-full w-full group-hover:scale-125 transition-all ease-in-out duration-300"
-                      />
-                    )}
-
-                    {item.type === "video" && (
-                      <iframe
-                        width="100%"
-                        height="100%"
-                        src={item.embedLink}
-                        title={item.title}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowfullscreen
-                      ></iframe>
-                    )}
-
-                    {/* overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/5 to-black/75 flex flex-col justify-between p-4">
-                      <span className="material-symbols-outlined text-white text-2xl inline-block ml-auto">
-                        {item.type === "audio" && "music_note"}
-                      </span>
-
-                      <h3 className="text-white font-bold text-2xl flex items-center">
-                        {item.title}
-                        <span className="material-symbols-outlined ml-2 tex-3xl font-semibold inline-block">
-                          play_circle
-                        </span>
-                      </h3>
-                    </div>
-                  </div>
+                  />
                 );
               })}
           </div>

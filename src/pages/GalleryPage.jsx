@@ -44,14 +44,14 @@ const GalleryPage = () => {
           )}
 
           {/* the art grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-5 mt-12 gap-y-12 lg:gap-y-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-5 mt-12 ">
             {loading &&
               [1, 2, 3, 4, 5].map((item, index) => {
                 return (
                   <SkeletalLoading
                     backgroundColor={"white"}
                     key={index}
-                    height={"250px"}
+                    height={"300px"}
                     width={"100%"}
                   />
                 );
