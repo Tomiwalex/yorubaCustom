@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Header from "../Components/ui/general/Header";
 import { motion } from "framer-motion";
 import image1 from "../assets/images/two-people.png";
@@ -29,69 +30,66 @@ const AboutPage = () => {
           className="px-5 lg:px-8 max-w-[1200px] mx-auto py-16 lg:py-[120px] text-center"
         >
           <h1 className="mt-12 lg:mt-0 text-[36px] leading-[1.3] font-bold color-brown sm:text-4xl xl:text-5xl xl:leading-tight">
-            About us
+            Restoring our lost customs
           </h1>
 
           <p className="headline mt-8 text-base font-medium leading-7 text-[#4b0102] lg:max-w-3xl mx-auto xl:pr-0 lg:pr-16 ">
-            Welcome to Ọmọ Oòduà Creations, where we celebrate and preserve the
-            rich heritage of the Yoruba culture. Born out of a deep love and
-            respect for Yoruba traditions, our company is dedicated to
-            showcasing the beauty, wisdom, and vibrancy of Yoruba customs. We
-            believe that in understanding our roots, we find strength, identity,
-            and inspiration for the future.
+            Over the years, we’ve seen our religion, beliefs, and the traditions
+            of our ancestors gradually diminishing in our present society due to
+            the impact of the western theology. These traditions are alien to
+            the present generation, many know few or nothing about our heritage.
+            “Yoruba Customs” was established with a renewed passion to restore
+            the Yoruba culture and return it to her former glory. We
+            passionately preach about the diversity and beauty of our heritage
+            making sure the present generation can understand our beliefs,
+            rituals, practices, and religion of the Yoruba people.
           </p>
         </motion.div>
       </section>
 
+      {/* objectives */}
       <section className="bg-gray-100">
         <motion.div
           initial={{ opacity: 0, translateY: 50 }}
           whileInView={{ opacity: 1, translateY: 0 }}
           className="px-5 lg:px-8 max-w-[1200px] mx-auto py-16 lg:py-[80px] "
         >
-          <p className="headline mt-8 text-base font-medium leading-7 text-gray-600 lg:max-w-3xl mx-auto xl:pr-0 lg:pr-16 ">
-            Our journey began with a simple idea: to create a platform where the
-            world can experience the essence of Yoruba culture. From the
-            rhythmic beats of the talking drum to the intricate patterns of
-            Adire fabric, every aspect of Yoruba tradition tells a story. At Ọmọ
-            Oòduà Creations, we are passionate about sharing these stories and
-            keeping our heritage alive for future generations.
-            <br />
-            Community: We believe in the power of community and the importance
-            of supporting one another. We work closely with local artisans,
-            storytellers, and cultural ambassadors to create opportunities and
-            strengthen our cultural ties.
-          </p>
-          <p className="headline mt-8 text-base font-medium leading-7 text-gray-600 lg:max-w-3xl mx-auto xl:pr-0 lg:pr-16">
-            Excellence: Striving for excellence is embedded in our ethos. From
-            the quality of our products to the experiences we curate, we are
-            committed to delivering nothing but the best.
-          </p>
-
           <div className="bg-[#ffffff] py-16 px-5 lg:px-10 rounded-md my-14">
             <h2 className="mt-10 mb-2 color-brown text-2xl lg:text-4xl font-bold lg:max-w-3xl mx-auto">
               {" "}
-              Our Mission and Vision
+              Championing the revolution
             </h2>
 
             <p className="headline  text-base font-medium leading-7 text-gray-600 lg:max-w-3xl mx-auto xl:pr-0 lg:pr-16 ">
-              Our mission is to be the leading platform for the celebration and
-              preservation of Yoruba culture. We aim to inspire pride in our
-              heritage, foster a deep connection to our roots, and share the
-              richness of Yoruba customs with the world. Through our products,
-              events, and educational initiatives, we strive to create a vibrant
-              community of culture enthusiasts and advocates. <br /> Our Vision
-              Our vision is to see Yoruba culture thrive globally, embraced and
-              celebrated by people of all backgrounds. We envision a world where
-              the wisdom, artistry, and traditions of the Yoruba people are
-              recognized and valued as integral to the global cultural tapestry.
-              By nurturing a deeper understanding and appreciation of our
-              heritage, we hope to inspire a more inclusive and culturally rich
-              future. Thank you for joining us on this journey. Together, we can
-              keep the spirit of Yoruba culture alive and thriving for
-              generations to come.
+              Our goal is simple: to shine a bright light on the beauty of the
+              Yoruba Culture and Tradition. We're passionate about keeping alive
+              the rich heritage of our ancestors by sharing our customs, values,
+              history, and traditions in a fun and engaging way. Through
+              education, celebrations, and preserving our unique heritage, we
+              want everyone to feel empowered to embrace and cherish the
+              authentic essence of Yoruba culture. Together, let's ensure that
+              this vibrant legacy continues to inspire and delight for
+              generations to come! At YorubaCustoms, we aspire to become your
+              reliable partner for authentic Yoruba cultural experiences,
+              products, and knowledge. We hope to inspire a global appreciation
+              and recognition of Yoruba culture through our unwavering
+              commitment to preserving, showcasing, and celebrating its diverse
+              traditions.
             </p>
           </div>
+
+          <h2 className="mt-10 mb-2 color-brown text-2xl lg:text-4xl font-bold lg:max-w-3xl mx-auto">
+            {" "}
+            OBJECTIVE
+          </h2>
+
+          <ul>
+            <li>
+              To put out the beauty of the Yoruba Culture and make people fall
+              in love with it.
+            </li>
+          </ul>
+          <p className="headline mt-8 text-base font-medium leading-7 text-gray-600 lg:max-w-3xl mx-auto xl:pr-0 lg:pr-16 "></p>
         </motion.div>
       </section>
 
@@ -101,14 +99,51 @@ const AboutPage = () => {
         <div className="">
           <h2 className="mt-10 mb-2 color-brown text-2xl lg:text-4xl font-bold lg:max-w-3xl mx-auto">
             {" "}
-            Our Values
+            CORE VALUE
           </h2>
           <p className="headline  text-base font-medium leading-7 text-gray-600 lg:max-w-3xl mx-auto xl:pr-0 lg:pr-16 ">
-            At the heart of Ọmọ Oòduà Creations are values that reflect our
-            commitment to authenticity, community, and excellence <br></br>
-            Authenticity: We are dedicated to presenting Yoruba culture in its
-            truest form. Every product, service, and event we offer is deeply
-            rooted in genuine Yoruba traditions and craftsmanship.
+            Illuminating undiluted Yoruba Culture & Tradition, this embodies the
+            brand's commitment to preserve, celebrate and promote the authentic
+            heritage of Yoruba culture.
+          </p>
+        </div>
+      </section>
+
+      {/* Mission state ment */}
+      <section className="py-14 lg:py-16 px-5">
+        <div className="">
+          <h2 className="mt-10 mb-2 color-brown text-2xl lg:text-4xl font-bold lg:max-w-3xl mx-auto">
+            {" "}
+            MISSION STATEMENT
+          </h2>
+          <p className="headline  text-base font-medium leading-7 text-gray-600 lg:max-w-3xl mx-auto xl:pr-0 lg:pr-16 ">
+            Our mission is to illuminate undiluted Yoruba Culture and Tradition.
+            We are dedicated to preserving and promoting the rich heritage of
+            the Yoruba people, fostering a deep understanding of our customs,
+            values, history and tradition through education, celebration,
+            promotion and preservation, we aim to empower individuals to embrace
+            and appreciate the authentic essence of Yoruba culture locally and
+            internationally, ensuring its legacy endures for generations to
+            come.
+          </p>
+        </div>
+      </section>
+
+      {/* Mission state ment */}
+      <section className="py-14 lg:py-16 px-5">
+        <div className="">
+          <h2 className="mt-10 mb-2 color-brown text-2xl lg:text-4xl font-bold lg:max-w-3xl mx-auto">
+            {" "}
+            VISION STATEMENT
+          </h2>
+          <p className="headline  text-base font-medium leading-7 text-gray-600 lg:max-w-3xl mx-auto xl:pr-0 lg:pr-16 ">
+            Our vision is to be the foremost brand that instantly springs to
+            minds of the people when discussing the promotion of Yoruba culture.
+            We aspire to become the go-to source for authentic Yoruba cultural
+            experiences, products, and knowledge. We strive to be a trusted and
+            respected brand, inspiring a global appreciation and recognition of
+            Yoruba culture through our unwavering commitment to preserving,
+            showcasing, and celebrating Yoruba diverse traditions
           </p>
         </div>
       </section>

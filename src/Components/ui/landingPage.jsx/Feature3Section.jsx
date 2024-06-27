@@ -4,22 +4,22 @@ const Feature3Section = () => {
     {
       title: "Accurate data and fact",
       icon: "analytics",
-      text: " Our platform is designed to enrich your understanding of Yoruba traditions, making research an enjoyable experience.",
+      text: "Are you a student? Or you’re just curious about the Yoruba culture? Look no further!! Yoruba Customs delivers the most accurate insights into the Yoruba history, culture, and religion. Get yourself comfortable as we embark on a beautiful journey with you.",
     },
     {
       title: "Videos",
       icon: "video_library",
-      text: "We bring you periodic cultural events amongst the Yoruba people. Enjoy the fun wherever you’re in the world",
+      text: "Our website is full of content on Yoruba culture, featuring podcasts, interviews, event coverage, and much more. Stay connected with us for a deep dive into the past and continuous updates on current Yoruba events and traditions.",
     },
     {
       title: "Traditional Stories",
       icon: "auto_stories",
-      text: "We’re fascinated by our history and can’t wait to share these fascinating narratives with you. Join our community as we explore",
+      text: "We’re fascinated by our history and can’t wait to share these fascinating narratives with you. Join our community as we explore the depths of Yoruba heritage and the treasures of our ancestral inheritance.",
     },
     {
       title: "Merchandize",
       icon: "category",
-      text: "Our online store grants you the convenience to acquire traditional Yoruba items, including revered Yoruba religious symbols and totems, at competitive prices",
+      text: "We're not just storytellers of our culture; we bring the essence of Yoruba traditions right to your doorstep. Our online store grants you the convenience to acquire traditional Yoruba items, including revered Yoruba religious symbols and totems, at competitive prices ",
     },
   ];
   return (
@@ -35,11 +35,19 @@ const Feature3Section = () => {
       <div className="px-5 md:px-[50px] lg:px-[100px] relative z-[2] max-w-[1700px] 2xl:mx-auto">
         <div className="text-center ">
           <h2 className="text-2xl mb-3 font-bold text-white sm:text-4xl xl:text-4xl max-w-3xl mx-auto lg:leading-[1.6]">
-            Why we are your “go to” guy for Yoruba culture and heritage
+            Àṣà Wa, Ìse Wa (Our Culture, Our Lifestyle)
           </h2>
+          <p className="mt-4 text-base xl:text-lg leading-7 text-white sm:mt-8 max-w-4xl mx-auto">
+            A n ṣe àtúnṣe àwọn èrò àti igbega oye agbaye nipa àwon àṣà Yoruba. A
+            ní ìgbéraga ńlá nínú ṣíṣe àfihàn ẹwà òtítọ́àti ọrọ̀ogún àṣà wa sí
+            àgbáyé.
+          </p>
         </div>
 
-        <div className="relative grid grid-cols-1 mt-10  sm:mt-16 sm:grid-cols-2  gap-y-10 md:grid-cols-4 lg:gap-x-4 md:gap-2 xl:mt-24">
+        <h2 className="text-lg lg:mt-20 lg:text-center text-left mt-10 font-bold text-white  xl:text-2xl lg:leading-[1.6]">
+          Why we are your “go to” guy for Yoruba culture and heritage
+        </h2>
+        <div className="relative grid grid-cols-1 mt-5  sm:mt-16 sm:grid-cols-2  gap-y-10 md:grid-cols-4 lg:gap-x-4 md:gap-2 xl:mt-10">
           {data.map((item, index) => {
             return (
               <div
