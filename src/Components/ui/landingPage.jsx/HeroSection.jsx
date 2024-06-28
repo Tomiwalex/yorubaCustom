@@ -101,7 +101,7 @@ const HeroSection = () => {
             </p>
 
             <Link
-              to=""
+              to="/blog"
               className="p-4 hover:shadow-[#fcb92d30] hover:shadow-lg transition-all duration-300 ease-in-out px-10 font-bold rounded-full text-white bg-[#FCB92D] mt-7 inline-flex  items-center"
             >
               Explore

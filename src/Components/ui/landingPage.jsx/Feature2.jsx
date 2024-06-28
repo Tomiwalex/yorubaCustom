@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 /* eslint-disable react/no-unescaped-entities */
 const Feature2 = () => {
   return (
@@ -12,18 +14,11 @@ const Feature2 = () => {
               (Some popular Yoruba cultural events)
             </h3>
           </div>
-
-          <a
-            href="#"
-            className=" font-bold color-brown inline-block p-4 bg-[#4b101210] hover:bg-[#4b1012] transition-all duration-300 ease-in-out hover:text-white rounded-md max-h-[53px]"
-          >
-            View more
-          </a>
         </div>
 
         <div className="grid max-w-[1700px] grid-cols-1 mx-auto mt-12 text-left sm:mt-16 sm:grid-cols-4 gap-y-14 gap-x-3">
           {/* first */}
-          <div className="relative group bg-[#fff] rounded-md overflow-hidden lg:h-[60dvh]">
+          <div className="relative group bg-[#fff] rounded-md overflow-hidden">
             <div className="overflow-hidden  aspect-w-16 aspect-h-9">
               <img
                 className="object-cover w-full h-full transition-all duration-300 transform group-hover:scale-125 lg:h-[200px]"
@@ -32,12 +27,12 @@ const Feature2 = () => {
               />
             </div>
 
-            <div className="p-5">
+            <div className="p-4">
               <p className="text-xl font-bold text-gray-900 font-pj">
                 Osun-Osogbo Festival
               </p>
 
-              <p className="mt-2 text-truncated text-sm font-normal text-gray-600">
+              <p className="mt-2 text-truncated text-sm lg:text-base leading-[1.6] font-normal text-gray-600">
                 The Osun-Osogbo Festival is an annual celebration in Osogbo,
                 Nigeria, to honor Osun, the Yoruba goddess of fertility and
                 water. The festival lasts two weeks and includes traditional
@@ -49,11 +44,17 @@ const Feature2 = () => {
                 performer called the “Arugbá” (calabash carrier) and a committee
                 of priestesses.
               </p>
-            </div>
 
-            <a href="#" title="">
-              <span className="absolute inset-0" aria-hidden="true"></span>
-            </a>
+              <Link
+                to="/blog/667f1bfc00cb8a7fde4f3ec2"
+                className="color-brown hover:text-white hover:bg-[#4b1012] duration-300 ease-in-out transition-all text-base lg:text-lg border-[#4b1012] border-[2px] p-3 mt-7 font-semibold items-center inline-flex cursor-pointer"
+              >
+                Read more
+                <span className="material-symbols-outlined ml-2">
+                  read_more
+                </span>
+              </Link>
+            </div>
           </div>
 
           {/* second */}
@@ -66,12 +67,12 @@ const Feature2 = () => {
               />
             </div>
 
-            <div className="p-5">
+            <div className="p-4">
               <p className=" text-xl font-bold text-gray-900 font-pj">
                 Ojude Oba Festival
               </p>
 
-              <p className="text-truncated mt-2 text-sm font-normal text-gray-600">
+              <p className="mt-2 text-truncated text-sm lg:text-base leading-[1.6] font-normal text-gray-600">
                 The Ojude Oba Festival is a vibrant and colorful cultural
                 celebration held annually in Ijebu-Ode, a historic town in Ogun
                 State, Nigeria. The festival, which translates to "The King's
@@ -90,9 +91,15 @@ const Feature2 = () => {
                 atmosphere.
               </p>
 
-              <a href="#" title="">
-                <span className="absolute inset-0" aria-hidden="true"></span>
-              </a>
+              <Link
+                to="/blog/667f277500cb8a7fde4f3f28"
+                className="color-brown hover:text-white hover:bg-[#4b1012] duration-300 ease-in-out transition-all text-base lg:text-lg border-[#4b1012] border-[2px] p-3 mt-7 font-semibold items-center inline-flex cursor-pointer"
+              >
+                Read more
+                <span className="material-symbols-outlined ml-2">
+                  read_more
+                </span>
+              </Link>
             </div>
           </div>
 
@@ -106,12 +113,12 @@ const Feature2 = () => {
               />
             </div>
 
-            <div className="p-5">
+            <div className="p-4">
               <p className="text-xl font-bold text-gray-900 font-pj">
                 Eyo Festival
               </p>
 
-              <p className="mt-2 text-truncated text-sm font-normal text-gray-600">
+              <p className="mt-2 text-truncated text-sm lg:text-base leading-[1.6] font-normal text-gray-600">
                 The Eyo Festival, also known as the Adamu Orisha Play, is a
                 colorful masquerade procession that takes place in Lagos,
                 Nigeria. The festival is held to commemorate the life of a
@@ -121,9 +128,15 @@ const Feature2 = () => {
                 Yoruba cultural beliefs and practices.
               </p>
 
-              <a href="#" title="">
-                <span className="absolute inset-0" aria-hidden="true"></span>
-              </a>
+              <Link
+                to="/blog/667f1d0e00cb8a7fde4f3ed0"
+                className="mt-7 color-brown hover:text-white hover:bg-[#4b1012] duration-300 ease-in-out transition-all text-base lg:text-lg border-[#4b1012] border-[2px] p-3  font-semibold items-center inline-flex cursor-pointer"
+              >
+                Read more
+                <span className="material-symbols-outlined ml-2">
+                  read_more
+                </span>
+              </Link>
             </div>
           </div>
 
@@ -137,12 +150,12 @@ const Feature2 = () => {
               />
             </div>
 
-            <div className="p-5">
+            <div className="p-4">
               <p className="text-xl font-bold text-gray-900 font-pj">
                 Sango Festival
               </p>
 
-              <p className="mt-2 text-truncated text-sm font-normal text-gray-600">
+              <p className="mt-2 text-truncated text-sm lg:text-base leading-[1.6] font-normal text-gray-600">
                 The Sango Festival is a traditional celebration held in Oyo, a
                 historic city in Oyo State, Nigeria, to honor Sango, the Yoruba
                 deity of thunder and lightning. This festival is deeply rooted
@@ -155,9 +168,15 @@ const Feature2 = () => {
                 and cultural identity
               </p>
 
-              <a href="#" title="">
-                <span className="absolute inset-0" aria-hidden="true"></span>
-              </a>
+              <Link
+                to="blog/667f1d6e00cb8a7fde4f3ed2"
+                className="color-brown hover:text-white hover:bg-[#4b1012] duration-300 ease-in-out transition-all text-base lg:text-lg border-[#4b1012] border-[2px] p-3 mt-7 font-semibold items-center inline-flex cursor-pointer"
+              >
+                Read more
+                <span className="material-symbols-outlined ml-2">
+                  read_more
+                </span>
+              </Link>
             </div>
           </div>
         </div>

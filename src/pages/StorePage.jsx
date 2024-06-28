@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import { Link } from "react-router-dom";
 import Header from "../Components/ui/general/Header";
@@ -16,7 +17,9 @@ const StorePage = () => {
     e.preventDefault();
     if (data) {
       const newData = data?.data.filter(
-        (item) => item?.name.includes(search) || item?.category.includes(search)
+        (item) =>
+          item?.name.toLowerCase().includes(search.toLowerCase()) ||
+          item?.category.toLowerCase().includes(search.toLowerCase())
       );
       setFilteredData(() => newData);
     } else {
@@ -84,7 +87,7 @@ const StorePage = () => {
 
                 <p className="text-lg font-semibold mt-6">Item not found</p>
                 <p className="text-base mt-2 font-medium max-w-[300px] mx-auto  text-gray-600">
-                  Your search "{search}"" did not match any item name or
+                  Your search "{search}" did not match any item name or
                   category, Please try again.
                 </p>
               </div>

@@ -36,7 +36,7 @@ const BlogSection = () => {
           </div>
         )}
 
-        <div className="h-full grid max-w-[1700px] grid-cols-1  mt-14  sm:mt-16 sm:text-left sm:grid-cols-4 gap-y-14 gap-x-5 ">
+        <div className="h-full grid max-w-[1700px] grid-cols-1  mt-14  sm:mt-16 sm:text-left sm:grid-cols-4 gap-3 ">
           {/* loading state */}
           {loading &&
             [1, 2, 3, 4, 5].map((item, index) => {

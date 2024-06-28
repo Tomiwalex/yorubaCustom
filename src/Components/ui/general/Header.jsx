@@ -37,7 +37,10 @@ const Header = ({ type, current, search, setSearch, handleSearch }) => {
               <input
                 type="search"
                 defaultValue={search}
-                onChange={(e) => setSearch(e.target.value)}
+                onChange={(e) => {
+                  setSearch(e.target.value);
+                  handleSearch(e);
+                }}
                 placeholder="Search"
                 className="w-full max-w-xs focus:outline-none px-2"
               />

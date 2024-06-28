@@ -124,7 +124,7 @@ const ProductDetails = () => {
                 {/* price */}
                 <div className="flex gap-x-4 my-3 mt-7">
                   <h1 className="text-gray-800 text-2xl lg:text-3xl font-bold">
-                    ₦10,000
+                    ₦{data?.data.price}
                   </h1>
                 </div>
 
@@ -159,6 +159,14 @@ const ProductDetails = () => {
                     add
                   </span>
                 </div>
+
+                {quantity > 1 && (
+                  <p className="items-center text-base font-semibold bg-gray-100 p-4 rounded my-3 mr-4 inline-flex">
+                    Total
+                    <span className="material-symbols-outlined">functions</span>
+                    : ₦{data?.data.price * quantity}
+                  </p>
+                )}
 
                 {/* Add to cart */}
                 <span
