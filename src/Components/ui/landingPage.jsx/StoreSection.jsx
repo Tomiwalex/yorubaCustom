@@ -18,7 +18,7 @@ const StoreSection = () => {
           </h2>
           <p className="text-white text-base mt-2 md:max-w-[350px] lg:max-w-[550px] mb-5">
             Catch all the gist about upcoming events, offers, products, and the
-            things we are up to at Ile Adulawo sent directly to your inbox.
+            things we are up to at Yoruba Custom sent directly to your inbox.
           </p>
 
           <NewsForm />

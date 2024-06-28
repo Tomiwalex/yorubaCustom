@@ -91,7 +91,7 @@ const HeroSection = () => {
             <div className="blur-circle h-40 w-40 absolute blur-[70px] rounded-full z-[-1]"></div>
 
             <h1 className="mt-12 lg:mt-0 text-[36px] leading-[1.3] font-bold text-white lg:text-[65px] xl:leading-tight">
-              Preserving Our Custom
+              Preserving Our Heritage
             </h1>
             <p className="headline mt-8 text-base font-normal leading-7 text-[white] lg:max-w-md xl:pr-0 lg:pr-16">
               Yoruba customs provide a rich foundation for individuals to learn,

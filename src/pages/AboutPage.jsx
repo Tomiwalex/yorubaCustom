@@ -8,7 +8,7 @@ import FeatureSection from "../Components/ui/about/FeatureSection";
 
 const AboutPage = () => {
   return (
-    <div className="overflow-y-hidden">
+    <div className="overflow-x-hidden ">
       <Header current={"about"} />
 
       <section className="bg-[#FCB92D40] relative">
@@ -27,13 +27,13 @@ const AboutPage = () => {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          className="px-5 lg:px-8 max-w-[1200px] mx-auto py-16 lg:py-[120px] text-center"
+          className="px-5 lg:px-8 max-w-[1200px] mx-auto py-16 lg:py-[120px] lg:text-center"
         >
           <h1 className="mt-12 lg:mt-0 text-[36px] leading-[1.3] font-bold color-brown sm:text-4xl xl:text-5xl xl:leading-tight">
             Restoring our lost customs
           </h1>
 
-          <p className="headline mt-8 text-base font-medium leading-7 text-[#4b0102] lg:max-w-3xl mx-auto xl:pr-0 lg:pr-16 ">
+          <p className="headline mt-8 text-base font-medium leading-7 text-[#4b0102] lg:max-w-3xl mx-auto  ">
             Over the years, we’ve seen our religion, beliefs, and the traditions
             of our ancestors gradually diminishing in our present society due to
             the impact of the western theology. These traditions are alien to
@@ -77,19 +77,6 @@ const AboutPage = () => {
               traditions.
             </p>
           </div>
-
-          <h2 className="mt-10 mb-2 color-brown text-2xl lg:text-4xl font-bold lg:max-w-3xl mx-auto">
-            {" "}
-            OBJECTIVE
-          </h2>
-
-          <ul>
-            <li>
-              To put out the beauty of the Yoruba Culture and make people fall
-              in love with it.
-            </li>
-          </ul>
-          <p className="headline mt-8 text-base font-medium leading-7 text-gray-600 lg:max-w-3xl mx-auto xl:pr-0 lg:pr-16 "></p>
         </motion.div>
       </section>
 

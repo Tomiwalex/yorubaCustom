@@ -9,8 +9,8 @@ const FeatureSection = () => {
           </h2>
         </div>
 
-        <div className="relative grid grid-cols-1 mt-10  sm:mt-16 sm:grid-cols-2 sm:gap-x-8 gap-y-10 md:grid-cols-4 md:gap-2 xl:mt-24">
-          <ul className="font-medium p-4 py-10 md:p-6 lg:p-8 relative rounded-md  bg-[#fff] lg:mx-3 ">
+        <div className="relative grid grid-cols-1 mt-10  sm:mt-16 sm:grid-cols-2 gap-4 md:grid-cols-4  xl:mt-24">
+          <ul className="list-disc font-medium p-4 py-10 md:p-6 lg:p-8 relative rounded-md  bg-[#fff]  ">
             <li className="mt-5 text-base lg:text-lg text-gray-600">
               To put out the beauty of the Yoruba Culture and make people fall
               in love with it.
@@ -22,36 +22,35 @@ const FeatureSection = () => {
           </ul>
 
           {/* second feature */}
-          <div className="font-medium p-4 py-10 md:p-6 lg:p-8 md:border-l md:border-gray-200 relative overflow-hidden rounded-md bg-[#fff] lg:mx-3">
-            <p className="mt-5 text-base lg:text-lg text-gray-600">
+          <ul className="list-disc font-medium p-4 py-10 md:p-6 lg:p-8 md:border-l md:border-gray-200 relative overflow-hidden rounded-md bg-[#fff] ">
+            <li className="mt-5 text-base lg:text-lg text-gray-600">
               To project Yoruba Culture wide and beyond
-            </p>
-            <p className="mt-5 text-base lg:text-lg text-gray-600">
+            </li>
+            <li className="mt-5 text-base lg:text-lg text-gray-600">
               To help people explore and learn about the mysteries and beauties
               of the Yoruba Heritage.
-            </p>
-          </div>
+            </li>
+          </ul>
 
           {/* third feature */}
-          <div className="p-4 py-10 md:p-6 lg:p-8 md:border-l md:border-gray-200 relative bg-[#fff] rounded-md lg:mx-3 ">
-            <p className="mt-5 text-base lg:text-lg text-gray-600 font-pj">
+          <ul className="list-disc font-medium p-4 py-10 md:p-6 lg:p-8 md:border-l md:border-gray-200 relative bg-[#fff] rounded-md  ">
+            <li className="mt-5 text-base lg:text-lg text-gray-600 font-pj">
               To tell authentic and undiluted Yoruba stories.
-            </p>
-            <p className="mt-5 text-base lg:text-lg text-gray-600 font-pj">
+            </li>
+            <li className="mt-5 text-base lg:text-lg text-gray-600 font-pj">
               To connect Yoruba in diaspora to their root.
-            </p>
-          </div>
+            </li>
+          </ul>
 
           {/* fourth feature */}
-          <div className="p-4 py-10 md:p-6 lg:p-8 md:border-l md:border-gray-200 relative bg-[#fff] rounded-md lg:mx-3 ">
-            <p className="mt-5 text-base lg:text-lg text-gray-600 font-pj">
+          <ul className="list-disc font-medium p-4 py-10 md:p-6 lg:p-8 md:border-l md:border-gray-200 relative bg-[#fff] rounded-md  ">
+            <li className="mt-5 text-base lg:text-lg text-gray-600 font-pj">
               To promote cultural exchange within the Yoruba in the diaspora.
-            </p>
-            <p className="mt-5 text-base lg:text-lg text-gray-600 font-pj">
-              • To connect with Yoruba origins and communities in other
-              countries.
-            </p>
-          </div>
+            </li>
+            <li className="mt-5 text-base lg:text-lg text-gray-600 font-pj">
+              To connect with Yoruba origins and communities in other countries.
+            </li>
+          </ul>
         </div>
       </div>
     </section>

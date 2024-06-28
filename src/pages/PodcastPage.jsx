@@ -54,7 +54,7 @@ const PodcastPage = () => {
 
           <div className="md:basis-[48%] relative z-[2] max-w-[510px]">
             <h1 className="text-[#2b090a] font-bold text-4xl lg:text-[60px] relative z-[1] leading-[1.1] min-[1800px]:text-[80px]">
-              Ọmọ Oòduà Creations Podcast
+              Yoruba Custom Podcast
             </h1>
 
             <p className="font-medium mt-2 lg:mt-3 lg:text-xl  leading-[1.6] relative z-[1] min-[1800px]:text-2xl">

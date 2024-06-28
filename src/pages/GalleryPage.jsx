@@ -22,8 +22,8 @@ const GalleryPage = () => {
           Explore the Richness of Yoruba Culture
         </h1>
         <p className="font-semibold text-base lg:text-xl mt-3 leading-[1.6]">
-          Welcome to the Ọmọ Oòduà Creations Gallery, a visual journey through
-          the vibrant and diverse world of Yoruba culture. Here, we showcase the
+          Welcome to the Yoruba Custom Gallery, a visual journey through the
+          vibrant and diverse world of Yoruba culture. Here, we showcase the
           artistry, craftsmanship, and traditions that define our heritage. Each
           piece in our gallery tells a story, reflecting the beauty, wisdom, and
           spirit of the Yoruba people.

@@ -22,16 +22,21 @@ const NewsForm = ({ type }) => {
     <div className="">
       <form
         onSubmit={handleSubmit}
-        style={{ borderColor: type == 2 ? "#4b1012" : "#fff" }}
-        className="overflow-hidden max-w-[280px] lg:max-w-[310px] ml-5 mt-3 border-[1px] flex justify-between items-center rounded-full  text-sm mb-3"
+        style={{
+          borderColor: type == 2 ? "#4b1012" : "#fff",
+          marginLeft: type == 2 ? "20px" : 0,
+        }}
+        className="overflow-hidden max-w-[280px] lg:max-w-[310px] mt-3 border-[1px] flex justify-between items-center rounded-full  text-sm mb-3"
       >
         <input
           type="email"
           name="email"
           id=""
           placeholder="Enter your email"
-          style={{ color: type == 2 ? "#4b1012" : "#fff" }}
-          className="max-w-[150px] lg:max-w-[unset]  ml-3 focus:outline-none inline-block bg-transparent"
+          style={{
+            color: type == 2 ? "#4b1012" : "#fff",
+          }}
+          className="max-w-[150px] lg:max-w-[unset]  focus:outline-none inline-block bg-transparent ml-3"
           required
           value={formData.email}
           onChange={(e) => setFormData({ ...formData, email: e.target.value })}

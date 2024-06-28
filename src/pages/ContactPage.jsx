@@ -1,8 +1,32 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/no-unescaped-entities */
+import { useState } from "react";
 import Header from "../Components/ui/general/Header";
 import image from "../assets/images/drum.png";
 import { motion } from "framer-motion";
+import usePostData from "../hooks/usePostData";
+import SuccessPopup from "../Components/ui/general/SuccessPopup";
+import ErrorPopup from "../Components/ui/general/ErrorPopup";
 
 const ContactPage = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const { data, error, loading, postData, setData } = usePostData(`/contact`);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    postData(formData);
+    setFormData({
+      name: "",
+      email: "",
+      message: "",
+    });
+  };
+
   return (
     <div className=" bg-[#fcb92d70] min-h-[100dvh] overflow-x-hidden relative">
       <img
@@ -20,28 +44,28 @@ const ContactPage = () => {
           className="basis-full lg:basis-1/2 pt-10 lg:pt-20 lg:w-[80%]"
         >
           <h2 className="text-2xl mb-3 font-bold text-gray-900 sm:text-4xl xl:text-4xl max-w-3xl mx-auto leading-[1.3]">
-            Get in contact with us
+            Got any question?
           </h2>
           <p className="mt-5 text-base font-medium text-gray-600">
-            At Ọmọ Oòduà Creations, we value every opportunity to connect with
-            our community. Whether you have a question, feedback, or just want
-            to share your thoughts, we are here to listen and assist. Your input
-            helps us grow and continue to celebrate the richness of Yoruba
-            culture with authenticity and passion.
+            You’ve got personal question you want to ask about Yoruba Customs?
+            We're eager to engage with you. Feel free to reach out to us on
           </p>
 
           {/* contact infos */}
           <div className=" mt-5 flex flex-wrap gap-3">
             {/* the mail */}
-            <div className="p-4 rounded-2xl text-center bg-white group hover:bg-[#4b1012] transition-all durstion-300 ease-in-out">
+            <a
+              href="mailto:info@yorubacustoms.com"
+              className="p-4 rounded-2xl text-center bg-white group hover:bg-[#4b1012] transition-all durstion-300 ease-in-out inline-block"
+            >
               <span className="material-symbols-outlined group-hover:text-[#fff] color-brown text-2xl font-bold transition-all durstion-300 ease-in-out">
                 mail
               </span>
 
               <p className="text-base text-gray-500 group-hover:text-[#fff] transition-all durstion-300 ease-in-out">
-                ourMail@gmail.com
+                info@yorubacustoms.com
               </p>
-            </div>
+            </a>
 
             {/* call */}
             <div className="p-4 rounded-2xl text-center bg-white group hover:bg-[#4b1012] transition-all durstion-300 ease-in-out">
@@ -62,11 +86,16 @@ const ContactPage = () => {
           className="basis-full lg:basis-1/2 pt-10 lg:pt-20 mb-5"
         >
           <div className="lg:max-w-[400px] lg:ml-auto bg-white rounded-2xl p-4">
-            <form>
+            <form onSubmit={(e) => handleSubmit(e)}>
               <div className="mb-6 cursor-pointer">
                 <input
                   type="text"
                   required
+                  min={5}
+                  defaultValue={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
                   placeholder="Your Name"
                   className="
                         w-full
@@ -87,6 +116,11 @@ const ContactPage = () => {
                 <input
                   type="email"
                   placeholder="Your Email"
+                  min={5}
+                  defaultValue={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   className="
                         w-full
                         rounded
@@ -106,6 +140,10 @@ const ContactPage = () => {
                 <textarea
                   rows="6"
                   placeholder="Your Message"
+                  defaultValue={formData.message}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
                   className="
                         w-full
                         rounded
@@ -121,11 +159,16 @@ const ContactPage = () => {
                 ></textarea>
               </div>
 
+              {/* error and success messages */}
+              {data && <SuccessPopup data={data} setData={setData} />}
+              {error && <ErrorPopup error={error} />}
+
               {/* The submit button */}
               <div>
                 <button
                   type="submit"
-                  className="
+                  className={`
+
                         w-full
                         text-white
                         bg-brown
@@ -133,11 +176,14 @@ const ContactPage = () => {
                         border border-primary
                         p-3
                         lg:p-4
+                        cursor-pointer
                         transition-all ease-in-out duration-300
                         hover:bg-[#4b101290]
-                        "
+                        ${loading && "animate-pulse"}
+                        ${loading && "cursor-not-allowed"}
+                        `}
                 >
-                  Send Message
+                  {loading ? "Submitting" : "Send Message"}
                 </button>
               </div>
             </form>
