@@ -4,7 +4,7 @@ import logo from "../../../assets/icons/logo-brown-2.jpg";
 import brownLogo from "../../../assets/icons/logo-brown.png";
 
 // eslint-disable-next-line react/prop-types
-const Header = ({ type, current }) => {
+const Header = ({ type, current, search, setSearch, handleSearch }) => {
   const [navOpen, setNavOpen] = useState(false);
 
   return (
@@ -30,9 +30,14 @@ const Header = ({ type, current }) => {
 
           {/* search bar for the store */}
           {current === "store" && (
-            <div className="transition-all duration-300 ease-in-out hover:shadow-lg shadow-[#4b1012] overflow-hidden flex items-center border-[1px] border-[#000000] rounded-md lg:mx-5">
+            <form
+              onSubmit={(e) => handleSearch(e)}
+              className="transition-all duration-300 ease-in-out hover:shadow-lg shadow-[#4b1012] overflow-hidden flex items-center border-[1px] border-[#000000] rounded-md lg:mx-5"
+            >
               <input
-                type="text"
+                type="search"
+                defaultValue={search}
+                onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search"
                 className="w-full max-w-xs focus:outline-none px-2"
               />
@@ -40,7 +45,7 @@ const Header = ({ type, current }) => {
               <span className=" material-symbols-outlined text-base lg:text-xl bg-black text-white lg:py-2 py-[6px] px-[10px] lg:px-3 cursor-pointer">
                 search
               </span>
-            </div>
+            </form>
           )}
 
           <button
