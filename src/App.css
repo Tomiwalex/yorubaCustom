@@ -47,6 +47,10 @@
   animation: fadeOut 300ms ease-in-out forwards;
 }
 
+.about-clip {
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
 @keyframes fadeIn {
   0% {
     display: none;

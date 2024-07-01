@@ -14,7 +14,7 @@ const BlogPage = () => {
       <Header current={"blog"} />
 
       <section className="py-10 bg-[#4b101210] min-h-[100dvh] pb-20">
-        <div className="px-5 md:px-[50px] lg:-[100px] mx-auto max-w-[1700px]">
+        <div className="px-5 md:px-[50px] lg:px-[100px] mx-auto max-w-[1700px]">
           {/* <div className="blur-circle h-40 w-40 absolute blur-[70px] rounded-full z-[0]"></div> */}
 
           <div className="max-w-[1700px] mx-auto flex flex-wrap justify-between align-top">
@@ -43,7 +43,7 @@ const BlogPage = () => {
             </div>
           )}
 
-          <div className="grid max-w-[1700px] grid-cols-1 mx-auto mt-3  sm:mt-5 sm:text-left sm:grid-cols-4 gap-y-8 gap-x-5">
+          <div className="grid max-w-[1700px] grid-cols-1 mx-auto mt-3  sm:mt-5 sm:text-left sm:grid-cols-4 gap-3">
             {/* loading state */}
             {loading &&
               [1, 2, 3, 4, 5].map((item, index) => {

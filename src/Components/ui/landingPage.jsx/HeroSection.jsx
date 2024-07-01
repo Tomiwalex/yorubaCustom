@@ -26,8 +26,8 @@ const HeroSection = () => {
         blur_on
       </span>
 
-      <div className="relative z-[2] pb-12 lg:py-20 lg:pt-10 xl:pb-20 h-full flex-1  ">
-        <div className="absolute inset-0  hidden lg:block">
+      <div className="relative z-[2] pb-12 lg:py-20 lg:pt-10 xl:pb-20 h-full flex-1 overflow-hidden">
+        <div className="absolute inset-0  hidden lg:block ">
           {/* yellow circle underlay */}
           <div className="absolute z-[1]  w-[45dvw] h-[45dvw]  left-[52dvw] bottom-[-5dvw] rounded-full bg-[#fcb92d90]"></div>
 

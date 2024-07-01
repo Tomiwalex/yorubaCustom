@@ -5,6 +5,7 @@ import image1 from "../assets/images/two-people.png";
 import image2 from "../assets/images/idol.png";
 import Footer from "../Components/ui/general/Footer";
 import FeatureSection from "../Components/ui/about/FeatureSection";
+import About2 from "../Components/ui/about/About2";
 
 const AboutPage = () => {
   return (
@@ -29,7 +30,7 @@ const AboutPage = () => {
           whileInView={{ opacity: 1 }}
           className="px-5 lg:px-8 max-w-[1200px] mx-auto py-16 lg:py-[120px] lg:text-center"
         >
-          <h1 className="mt-12 lg:mt-0 text-[36px] leading-[1.3] font-bold color-brown sm:text-4xl xl:text-5xl xl:leading-tight">
+          <h1 className="mt-12 lg:mt-0 text-[36px] leading-[1.3] font-bold color-brown lg:text-5xl  xl:leading-tight">
             Restoring our lost customs
           </h1>
 
@@ -52,15 +53,16 @@ const AboutPage = () => {
         <motion.div
           initial={{ opacity: 0, translateY: 50 }}
           whileInView={{ opacity: 1, translateY: 0 }}
-          className="px-5 lg:px-8 max-w-[1200px] mx-auto py-16 lg:py-[80px] "
+          className="px-5 md:px-[50px] lg:px-[100px] max-w-[1700px] mx-auto py-16 flex flex-wrap justify-between"
         >
-          <div className="bg-[#ffffff] py-16 px-5 lg:px-10 rounded-md my-14">
-            <h2 className="mt-10 mb-2 color-brown text-2xl lg:text-4xl font-bold lg:max-w-3xl mx-auto">
+          {/* text */}
+          <div className=" rounded-md my-14 lg:basis-1/2">
+            <h2 className="mt-10 mb-2 color-brown text-2xl lg:text-5xl font-bold lg:max-w-3xl mx-auto ">
               {" "}
               Championing the revolution
             </h2>
 
-            <p className="headline  text-base font-medium leading-7 text-gray-600 lg:max-w-3xl mx-auto xl:pr-0 lg:pr-16 ">
+            <p className="mt-5 headline text-base font-medium leading-7 leadsing-[1.6] text-gray-500 lg:max-w-3xl mx-auto xl:pr-0 lg:pr-16 ">
               Our goal is simple: to shine a bright light on the beauty of the
               Yoruba Culture and Tradition. We're passionate about keeping alive
               the rich heritage of our ancestors by sharing our customs, values,
@@ -77,63 +79,21 @@ const AboutPage = () => {
               traditions.
             </p>
           </div>
+
+          {/* Image */}
+          <div
+            style={{
+              background:
+                "url('https://2.bp.blogspot.com/-5mYSCjaN-tA/VfV614LE2bI/AAAAAAAAB3Q/MbpH-o_TrUE/s1600/Yoruba-talking-drum.jpg')",
+            }}
+            className="lg:basis-1/2 bg-no-repeat about-clip bg-center bg-contain"
+          ></div>
         </motion.div>
       </section>
 
+      <About2 />
+
       <FeatureSection />
-
-      <section className="py-14 lg:py-16 px-5">
-        <div className="">
-          <h2 className="mt-10 mb-2 color-brown text-2xl lg:text-4xl font-bold lg:max-w-3xl mx-auto">
-            {" "}
-            CORE VALUE
-          </h2>
-          <p className="headline  text-base font-medium leading-7 text-gray-600 lg:max-w-3xl mx-auto xl:pr-0 lg:pr-16 ">
-            Illuminating undiluted Yoruba Culture & Tradition, this embodies the
-            brand's commitment to preserve, celebrate and promote the authentic
-            heritage of Yoruba culture.
-          </p>
-        </div>
-      </section>
-
-      {/* Mission state ment */}
-      <section className="py-14 lg:py-16 px-5">
-        <div className="">
-          <h2 className="mt-10 mb-2 color-brown text-2xl lg:text-4xl font-bold lg:max-w-3xl mx-auto">
-            {" "}
-            MISSION STATEMENT
-          </h2>
-          <p className="headline  text-base font-medium leading-7 text-gray-600 lg:max-w-3xl mx-auto xl:pr-0 lg:pr-16 ">
-            Our mission is to illuminate undiluted Yoruba Culture and Tradition.
-            We are dedicated to preserving and promoting the rich heritage of
-            the Yoruba people, fostering a deep understanding of our customs,
-            values, history and tradition through education, celebration,
-            promotion and preservation, we aim to empower individuals to embrace
-            and appreciate the authentic essence of Yoruba culture locally and
-            internationally, ensuring its legacy endures for generations to
-            come.
-          </p>
-        </div>
-      </section>
-
-      {/* Mission state ment */}
-      <section className="py-14 lg:py-16 px-5">
-        <div className="">
-          <h2 className="mt-10 mb-2 color-brown text-2xl lg:text-4xl font-bold lg:max-w-3xl mx-auto">
-            {" "}
-            VISION STATEMENT
-          </h2>
-          <p className="headline  text-base font-medium leading-7 text-gray-600 lg:max-w-3xl mx-auto xl:pr-0 lg:pr-16 ">
-            Our vision is to be the foremost brand that instantly springs to
-            minds of the people when discussing the promotion of Yoruba culture.
-            We aspire to become the go-to source for authentic Yoruba cultural
-            experiences, products, and knowledge. We strive to be a trusted and
-            respected brand, inspiring a global appreciation and recognition of
-            Yoruba culture through our unwavering commitment to preserving,
-            showcasing, and celebrating Yoruba diverse traditions
-          </p>
-        </div>
-      </section>
 
       <Footer />
     </div>

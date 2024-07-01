@@ -2,10 +2,11 @@
 const FeatureSection = () => {
   return (
     <section className="py-20 bg-[#01350110]  sm:py-16 lg:py-[100px] cursor-pointer">
-      <div className="px-5 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <div className="px-5 mx-auto max-w-[1700px] md:px-[50px] lg:px-[100px]">
         <div className="text-center ">
-          <h2 className="text-2xl mb-3 font-bold text-gray-900 sm:text-4xl xl:text-4xl max-w-3xl mx-auto leading-[1.3]">
-            OBJECTIVES
+          <h2 className="text-2xl mb-3 font-bold text-gray-900 lg:text-4xl max-w-3xl mx-auto leading-[1.3] inline-flex items-center">
+            OBJECTIVES{" "}
+            <span className="material-symbols-outlined ml-2">target</span>
           </h2>
         </div>
 

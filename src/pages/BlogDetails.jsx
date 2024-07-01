@@ -13,7 +13,7 @@ import SuccessPopup from "../Components/ui/general/SuccessPopup";
 const BlogDetails = () => {
   const [showForm, setShowForm] = useState(false);
   const { id } = useParams();
-  const { data, loading, error } = useGetData(`/blog/${id}`);
+  const { data, loading, error, fetchData } = useGetData(`/blog/${id}`);
   const url = window.location.href;
   const [formData, setFormData] = useState({
     name: "",
@@ -41,14 +41,16 @@ const BlogDetails = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    postData(formData);
+    await postData(formData);
     setFormData({
       name: "",
       email: "",
       comment: "",
     });
+
+    fetchData();
   };
 
   return (
@@ -120,7 +122,12 @@ const BlogDetails = () => {
           </div>
 
           {/* post content */}
-          <p className="mt-10 text-sm lg:text-lg leading-[1.6] font-medium text-gray-500  cursor-pointer">
+          <p
+            style={{
+              textAlign: "justify",
+            }}
+            className="mt-10 text-sm lg:text-lg leading-[1.6] font-medium text-gray-500  cursor-pointer"
+          >
             {data.data?.description}
           </p>
 

@@ -11,9 +11,52 @@
   background: transparent;
   transition: all 300ms ease-in-out;
 }
+.nav-link-wide::after {
+  content: "";
+  display: block;
+  border-radius: 2px;
+  width: 0px;
+  height: 7px;
+  position: relative;
+  top: 15px;
+  right: 0;
+  background: transparent;
+  transition: all 300ms ease-in-out;
+}
+.nav-link-wide:hover::after {
+  width: 100%;
+  background-color: #fcb92d;
+}
 .nav-link:hover::after {
   top: 10px;
   background-color: #4b0102;
+}
+
+.active-nav-link::after {
+  content: "";
+  display: block;
+  border-radius: 100%;
+  width: 7px;
+  height: 7px;
+  position: relative;
+  right: 50%;
+  left: 50%;
+  transition: all 300ms ease-in-out;
+  top: 10px;
+  background-color: #4b0102;
+}
+
+.active-type::after {
+  content: "";
+  display: block;
+  border-radius: 1px;
+  width: 100%;
+  height: 7px;
+  position: relative;
+  top: 15px;
+  right: 0;
+  background: #fcb92d;
+  transition: all 300ms ease-in-out;
 }
 
 .container {

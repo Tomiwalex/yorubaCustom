@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/icons/logo-brown-2.jpg";
-import brownLogo from "../../../assets/icons/logo-brown.png";
 
 // eslint-disable-next-line react/prop-types
 const Header = ({ type, current, search, setSearch, handleSearch }) => {
@@ -22,7 +21,7 @@ const Header = ({ type, current, search, setSearch, handleSearch }) => {
                     current == "store" || current === "home" ? "5px" : "0px",
                 }}
                 className="relative w-[70px] lg:w-[90px] h-auto"
-                src={current === "store" ? brownLogo : logo}
+                src={logo}
                 alt="logo"
               />
             </Link>
@@ -88,74 +87,75 @@ const Header = ({ type, current, search, setSearch, handleSearch }) => {
           </button>
 
           <div className="hidden lg:flex lg:items-center lg:ml-auto lg:space-x-10">
-            {current !== "home" && (
-              <Link
-                to="/"
-                className="text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 "
-              >
-                {" "}
-                Home{" "}
-              </Link>
-            )}
+            <Link
+              to="/"
+              className={`text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 ${
+                current == "home" && "active-nav-link"
+              }`}
+            >
+              {" "}
+              Home{" "}
+            </Link>
 
-            {current !== "blog" && current !== "store" && (
-              <Link
-                to="/blog"
-                className="text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 "
-              >
-                {" "}
-                Blog{" "}
-              </Link>
-            )}
+            <Link
+              to="/blog"
+              className={`text-base nav-link ${
+                current == "blog" && "active-nav-link"
+              }  font-semibold text-[#4b1019] transition-all duration-200 `}
+            >
+              {" "}
+              Blog{" "}
+            </Link>
 
-            {current !== "about" && current !== "store" && (
-              <Link
-                to="/about"
-                className="text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 "
-              >
-                {" "}
-                About
-              </Link>
-            )}
+            <Link
+              to="/about"
+              className={`text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 ${
+                current == "about" && "active-nav-link"
+              }`}
+            >
+              {" "}
+              About
+            </Link>
 
-            {current !== "contact" && (
-              <Link
-                to="/contact"
-                className="text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 "
-              >
-                {" "}
-                Contact
-              </Link>
-            )}
+            <Link
+              to="/contact"
+              className={`text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 ${
+                current == "contact" && "active-nav-link"
+              }`}
+            >
+              {" "}
+              Contact
+            </Link>
 
-            <a
-              href="#"
+            <Link
               title=""
-              className="text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 "
+              className={`text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 ${
+                current == "contest" && "active-nav-link"
+              } `}
             >
               {" "}
               Contest{" "}
-            </a>
+            </Link>
 
-            {current !== "podcast" && current !== "store" && (
-              <Link
-                to="/podcast"
-                className="text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 "
-              >
-                {" "}
-                Podcast
-              </Link>
-            )}
+            <Link
+              to="/podcast"
+              className={`text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 ${
+                current == "podcast" && "active-nav-link"
+              } `}
+            >
+              {" "}
+              Podcast
+            </Link>
 
-            {current !== "gallery" && (
-              <Link
-                to="/gallery"
-                className="text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 "
-              >
-                {" "}
-                Gallery
-              </Link>
-            )}
+            <Link
+              to="/gallery"
+              className={`text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 ${
+                current == "gallery" && "active-nav-link"
+              } `}
+            >
+              {" "}
+              Gallery
+            </Link>
           </div>
 
           {current !== "store" && (
