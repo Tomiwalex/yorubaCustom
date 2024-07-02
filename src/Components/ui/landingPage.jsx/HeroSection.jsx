@@ -2,9 +2,10 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import Header from "../general/Header";
 import festivalImage from "../../../assets/images/festival.png";
-import slide3Image from "../../../assets/images/slide-3-image.png";
-import slide4Image from "../../../assets/images/slide-4-image.png";
-import slide5Image from "../../../assets/images/slide-5-image.png";
+import slide3Image from "../../../assets/images/slide-3-image.jpg";
+import slide4Image from "../../../assets/images/slide-4-image.jpg";
+import slide5Image from "../../../assets/images/slide-1-image.jpg";
+import slide2Image from "../../../assets/images/slide-2-image.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectFade, Autoplay, Pagination } from "swiper/modules";
 import { motion } from "framer-motion";
@@ -49,15 +50,15 @@ const HeroSection = () => {
           >
             <SwiperSlide>
               <img
-                className="object-left object-cover w-full h-full"
-                src={festivalImage}
+                className="object-cover object-center w-[80%] h-[80%] m-auto mt-[10%] rounded-tl-[70px] rounded-br-[70px]"
+                src={slide2Image}
                 alt=""
               />
             </SwiperSlide>
 
             <SwiperSlide>
               <img
-                className="object-cover object-right-bottom w-full h-auto"
+                className="object-cover object-center w-[80%] h-[80%] m-auto mt-[10%] rounded-tl-[70px] rounded-br-[70px]"
                 src={slide3Image}
                 alt="image 4"
               />
@@ -65,7 +66,7 @@ const HeroSection = () => {
 
             <SwiperSlide>
               <img
-                className="object-cover object-right w-full ml-auto h-full"
+                className="object-cover object-center w-[80%] h-[80%] m-auto mt-[10%] rounded-tl-[70px] rounded-br-[70px]"
                 src={slide5Image}
                 alt=""
               />
@@ -73,7 +74,7 @@ const HeroSection = () => {
 
             <SwiperSlide>
               <img
-                className="object-cover object-center mt-auto h-full w-"
+                className="object-cover object-center w-[80%] h-[80%] m-auto mt-[10%] rounded-tl-[70px] rounded-br-[70px]"
                 src={slide4Image}
                 alt="image 5"
               />

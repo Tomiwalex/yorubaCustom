@@ -100,3 +100,40 @@
     }
   }
 }
+
+.quill-div {
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: black;
+    font-size: revert;
+    font-weight: revert;
+  }
+
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+
+  ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+  }
+
+  p {
+    font-size: 14px;
+    color: rgb(150, 150, 150);
+    line-height: 1.6;
+    font-weight: 500;
+    text-align: "justify";
+    font-size: revert;
+    font-weight: revert;
+  }
+
+  @media (min: 1024px) {
+    p {
+      font-size: 16px;
+    }
+  }
+}

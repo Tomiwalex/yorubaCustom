@@ -53,6 +53,8 @@ const BlogDetails = () => {
     fetchData();
   };
 
+  // console.log(data?.description);
+
   return (
     <div>
       <div className="sticky top-0 z-[2] shadow-sm">
@@ -122,14 +124,9 @@ const BlogDetails = () => {
           </div>
 
           {/* post content */}
-          <p
-            style={{
-              textAlign: "justify",
-            }}
-            className="mt-10 text-sm lg:text-lg leading-[1.6] font-medium text-gray-500  cursor-pointer"
-          >
-            {data.data?.description}
-          </p>
+          <div className="quill-div cursor-pointer mt-10 lg:mt-12">
+            <div dangerouslySetInnerHTML={{ __html: data.data.description }} />
+          </div>
 
           <hr className="my-12 lg:my-16" />
 
