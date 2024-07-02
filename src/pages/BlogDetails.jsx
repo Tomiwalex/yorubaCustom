@@ -4,7 +4,7 @@ import { useState } from "react";
 import Footer from "../Components/ui/general/Footer";
 import Header from "../Components/ui/general/Header";
 import useGetData from "../hooks/useGetData";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import SkeletalLoading from "../Components/ui/general/SkeletalLoading";
 import ErrorPopup from "../Components/ui/general/ErrorPopup";
 import usePostData from "../hooks/usePostData";
@@ -14,6 +14,7 @@ const BlogDetails = () => {
   const [showForm, setShowForm] = useState(false);
   const { id } = useParams();
   const { data, loading, error, fetchData } = useGetData(`/blog/${id}`);
+  const { data: otherData } = useGetData("/blog");
   const url = window.location.href;
   const [formData, setFormData] = useState({
     name: "",
@@ -252,6 +253,38 @@ const BlogDetails = () => {
           <ErrorPopup error={error} />
         </div>
       )}
+
+      <hr className="my-12 lg:my-16" />
+
+      <section className="mb-20">
+        <div className="max-w-[1200px] mx-auto px-4 lg:px-8">
+          <h2 className="text-lg font-semibold lg:text-2xl">Other Blogs</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-10">
+            {otherData &&
+              otherData?.data.map((item, index) => {
+                if (index < 4 && item?.id !== id) {
+                  return (
+                    <Link
+                      to={`/blog/${item?.id}`}
+                      key={index}
+                      className="h-[250px] hover:scale-95 transition-all duration-300 ease-in-out"
+                    >
+                      <img src={item.imageUrl} className="h-[150px] w-full" />
+
+                      <h3 className="text-base lg:text-lg font-semibold mt-3">
+                        {item?.title}
+                      </h3>
+                      <p className="mt-4 text-sm font-normalfont-pj">
+                        {new Date(item?.date).toDateString()}
+                      </p>
+                    </Link>
+                  );
+                }
+              })}
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </div>
