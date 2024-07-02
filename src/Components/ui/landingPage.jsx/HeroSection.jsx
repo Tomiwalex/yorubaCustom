@@ -50,7 +50,7 @@ const HeroSection = () => {
           >
             <SwiperSlide>
               <img
-                className="object-cover object-center w-[80%] h-[80%] m-auto mt-[10%] rounded-tl-[70px] rounded-br-[70px]"
+                className="object-cover object-center w-[80%] h-[80%] m-auto mt-[10%] rounded-tl-[90px] rounded-br-[90px]"
                 src={slide2Image}
                 alt=""
               />
@@ -58,7 +58,7 @@ const HeroSection = () => {
 
             <SwiperSlide>
               <img
-                className="object-cover object-center w-[80%] h-[80%] m-auto mt-[10%] rounded-tl-[70px] rounded-br-[70px]"
+                className="object-cover object-center w-[80%] h-[80%] m-auto mt-[10%] rounded-tl-[90px] rounded-br-[90px]"
                 src={slide3Image}
                 alt="image 4"
               />
@@ -66,7 +66,7 @@ const HeroSection = () => {
 
             <SwiperSlide>
               <img
-                className="object-cover object-center w-[80%] h-[80%] m-auto mt-[10%] rounded-tl-[70px] rounded-br-[70px]"
+                className="object-cover object-center w-[80%] h-[80%] m-auto mt-[10%] rounded-tl-[90px] rounded-br-[90px]"
                 src={slide5Image}
                 alt=""
               />
@@ -74,7 +74,7 @@ const HeroSection = () => {
 
             <SwiperSlide>
               <img
-                className="object-cover object-center w-[80%] h-[80%] m-auto mt-[10%] rounded-tl-[70px] rounded-br-[70px]"
+                className="object-cover object-center w-[80%] h-[80%] m-auto mt-[10%] rounded-tl-[90px] rounded-br-[90px]"
                 src={slide4Image}
                 alt="image 5"
               />
