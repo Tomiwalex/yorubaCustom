@@ -79,7 +79,6 @@ const GalleryPage = () => {
             {type}
             <span className="material-symbols-outlined ml-2">ssid_chart</span>
           </h1>
-
           {error && (
             <div className="flex justify-center w-full mt-10">
               <ErrorPopup error={error + ", reload the page to refetch"} />
@@ -106,7 +105,6 @@ const GalleryPage = () => {
               />
             </div>
           )}
-
           {/* the art grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4  gap-2 gap-y-5 mt-12 ">
             {loading &&
