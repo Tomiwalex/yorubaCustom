@@ -4,24 +4,44 @@ import { motion } from "framer-motion";
 import useGetData from "../hooks/useGetData";
 import SkeletalLoading from "../Components/ui/general/SkeletalLoading";
 import ErrorPopup from "../Components/ui/general/ErrorPopup";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "../Components/ui/general/Footer";
 
 const GalleryPage = () => {
   const { data, loading, error } = useGetData("/gallery");
   const [type, setType] = useState("All");
+  const [filteredData, setFilteredData] = useState(null);
   const [activeImage, setActiveImage] = useState("");
+
+  useEffect(() => {
+    if (data && type == "All") {
+      setFilteredData(() => data?.data);
+    } else if (data && type == "Images") {
+      const newData = data?.data.filter((item) => item.type == "image");
+      setFilteredData(() => newData);
+    }
+  }, [data, type]);
+
+  const handleFilterVideo = () => {
+    if (data) {
+      const newData = data?.data.filter((item) => item.type == "video");
+      setFilteredData(() => newData);
+    }
+  };
 
   return (
     <div>
       <Header current="gallery" />
 
-      <div className="border-b-[1px]">
-        <div className="text-white p-4  md:px-[50px] lg:px-[100px] max-w-[1700px] mx-auto bg-[#4b1012] border-b-[#260506] flex item-center">
+      <div className="border-b-[1px]  bg-[#4b1012]">
+        <div className="text-white px-5 py-2 pt-3  md:px-[50px] lg:px-[100px] max-w-[1700px] mx-auto border-b-[#260506] flex items-center">
           {["All", "Images", "Video"].map((item, index) => {
             return (
               <p
-                onClick={() => setType(item)}
+                onClick={() => {
+                  setType(item);
+                  item == "Video" && handleFilterVideo();
+                }}
                 key={index}
                 className={`font-medium px-3 nav-link-wide ${
                   item == type && "active-type"
@@ -90,6 +110,7 @@ const GalleryPage = () => {
           {/* the art grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4  gap-2 gap-y-5 mt-12 ">
             {loading &&
+              !filteredData?.length &&
               [1, 2, 3, 4, 5].map((item, index) => {
                 return (
                   <SkeletalLoading
@@ -101,10 +122,10 @@ const GalleryPage = () => {
                 );
               })}
 
-            {data &&
-              data?.data?.length &&
+            {filteredData &&
+              filteredData.length &&
               !loading &&
-              data.data.map((item, index) => {
+              filteredData.map((item, index) => {
                 return (
                   <motion.div
                     onClick={() => item.type == "image" && setActiveImage(item)}

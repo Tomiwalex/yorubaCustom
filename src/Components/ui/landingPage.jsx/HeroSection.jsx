@@ -29,7 +29,7 @@ const HeroSection = () => {
       <div className="relative z-[2] pb-12 lg:py-20 lg:pt-10 xl:pb-20 h-full flex-1 overflow-hidden">
         <div className="absolute inset-0  hidden lg:block ">
           {/* yellow circle underlay */}
-          <div className="absolute z-[1]  w-[45dvw] h-[45dvw]  left-[52dvw] bottom-[-5dvw] rounded-full bg-[#fcb92d90]"></div>
+          <div className="absolute z-[1]  w-[45dvw] h-[45dvw]  left-[52dvw] bottom-[-5dvw] rounded-full bg-[#d8c8a610]"></div>
 
           {/*slider Image for large screen */}
 
@@ -57,7 +57,7 @@ const HeroSection = () => {
 
             <SwiperSlide>
               <img
-                className="object-cover object-right-bottom w-full h-full "
+                className="object-cover object-right-bottom w-full h-auto"
                 src={slide3Image}
                 alt="image 4"
               />
@@ -73,7 +73,7 @@ const HeroSection = () => {
 
             <SwiperSlide>
               <img
-                className="object-cover object-left-bottom w-full ml-auto h-full"
+                className="object-cover object-center mt-auto h-full w-"
                 src={slide4Image}
                 alt="image 5"
               />

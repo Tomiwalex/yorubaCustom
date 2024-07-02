@@ -7,6 +7,13 @@ import { motion } from "framer-motion";
 import usePostData from "../hooks/usePostData";
 import SuccessPopup from "../Components/ui/general/SuccessPopup";
 import ErrorPopup from "../Components/ui/general/ErrorPopup";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import {
+  faInstagram,
+  faTiktok,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -55,7 +62,7 @@ const ContactPage = () => {
           <div className=" mt-5 flex flex-wrap gap-3">
             {/* the mail */}
             <a
-              href="mailto:info@yorubacustoms.com"
+              href="mailto:yorubacustoms@gmail.com"
               className="p-4 rounded-2xl text-center bg-white group hover:bg-[#4b1012] transition-all durstion-300 ease-in-out inline-block"
             >
               <span className="material-symbols-outlined group-hover:text-[#fff] color-brown text-2xl font-bold transition-all durstion-300 ease-in-out">
@@ -63,7 +70,7 @@ const ContactPage = () => {
               </span>
 
               <p className="text-base text-gray-500 group-hover:text-[#fff] transition-all durstion-300 ease-in-out">
-                info@yorubacustoms.com
+                yorubacustoms@gmail.com
               </p>
             </a>
 
@@ -76,6 +83,24 @@ const ContactPage = () => {
               <p className="text-base text-gray-500 group-hover:text-[#fff] transition-all durstion-300 ease-in-out">
                 +xxx-xxx-xxx-xxxx
               </p>
+            </div>
+
+            <div className="flex items-center gap-7 bg-white rounded-2xl p-4 py-7">
+              <a href="mailto:yorubacustoms@gmail.com">
+                <FontAwesomeIcon icon={faEnvelope} size="2x" color="#4b1012" />
+              </a>
+
+              <a href="https://www.tiktok.com/@yorubacustoms?_t=8ngWB4MBqSc&_r=1">
+                <FontAwesomeIcon icon={faTiktok} size="2x" color="#4b1012" />
+              </a>
+
+              <a href="http://youtube.com/@yorubacustoms">
+                <FontAwesomeIcon icon={faYoutube} size="2x" color="#4b1012" />
+              </a>
+
+              <a href="https://www.instagram.com/yorubacustoms?utm_source=qr&igsh=MW1pYWhqMXY0bTc2Mg==">
+                <FontAwesomeIcon icon={faInstagram} size="2x" color="#4b1012" />
+              </a>
             </div>
           </div>
         </motion.div>
