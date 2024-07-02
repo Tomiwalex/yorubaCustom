@@ -97,6 +97,17 @@ const Header = ({ type, current, search, setSearch, handleSearch }) => {
               Home{" "}
             </Link>
 
+            {/* gallery */}
+            <Link
+              to="/gallery"
+              className={`text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 ${
+                current == "gallery" && "active-nav-link"
+              } `}
+            >
+              {" "}
+              Gallery
+            </Link>
+
             <Link
               to="/blog"
               className={`text-base nav-link ${
@@ -105,6 +116,28 @@ const Header = ({ type, current, search, setSearch, handleSearch }) => {
             >
               {" "}
               Blog{" "}
+            </Link>
+
+            {/* vote now */}
+            <Link
+              title=""
+              className={`text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 ${
+                current == "contest" && "active-nav-link"
+              } `}
+            >
+              {" "}
+              Vote now{" "}
+            </Link>
+
+            {/* podcast */}
+            <Link
+              to="/podcast"
+              className={`text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 ${
+                current == "podcast" && "active-nav-link"
+              } `}
+            >
+              {" "}
+              Podcast
             </Link>
 
             <Link
@@ -125,36 +158,6 @@ const Header = ({ type, current, search, setSearch, handleSearch }) => {
             >
               {" "}
               Contact
-            </Link>
-
-            <Link
-              title=""
-              className={`text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 ${
-                current == "contest" && "active-nav-link"
-              } `}
-            >
-              {" "}
-              Contest{" "}
-            </Link>
-
-            <Link
-              to="/podcast"
-              className={`text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 ${
-                current == "podcast" && "active-nav-link"
-              } `}
-            >
-              {" "}
-              Podcast
-            </Link>
-
-            <Link
-              to="/gallery"
-              className={`text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 ${
-                current == "gallery" && "active-nav-link"
-              } `}
-            >
-              {" "}
-              Gallery
             </Link>
           </div>
 
