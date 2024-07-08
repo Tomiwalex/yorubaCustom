@@ -1,14 +1,14 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
-const BlogCard = ({ item, index }) => {
+const BlogCard = ({ item, index, data }) => {
   return (
     <Link
       to={`/blog/${item?.id}`}
       className=" flex rounded-sm overflow-hidden relative z-[1] group bg-cover items-end min-h-[330px] lg:min-h-[60dvh] text-white group"
     >
       {/* category */}
-      {index < 4 && (
+      {index > data.length - 5 && (
         <div className="absolute z-[2] top-4 right-4 p-3 text-sm font-semibold rounded bg-[#fcb92d]">
           New
         </div>

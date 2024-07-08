@@ -1,20 +1,23 @@
-/* eslint-disable no-unused-vars */
+// /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
 import Footer from "../Components/ui/general/Footer";
 import Header from "../Components/ui/general/Header";
 import useGetData from "../hooks/useGetData";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import SkeletalLoading from "../Components/ui/general/SkeletalLoading";
 import ErrorPopup from "../Components/ui/general/ErrorPopup";
 import usePostData from "../hooks/usePostData";
 import SuccessPopup from "../Components/ui/general/SuccessPopup";
+import { faComment } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpFromBracket } from "@fortawesome/free-solid-svg-icons";
+import RelatedPost from "../Components/ui/blog/RelatedPost";
 
 const BlogDetails = () => {
   const [showForm, setShowForm] = useState(false);
   const { id } = useParams();
   const { data, loading, error, fetchData } = useGetData(`/blog/${id}`);
-  const { data: otherData } = useGetData("/blog");
   const url = window.location.href;
   const [formData, setFormData] = useState({
     name: "",
@@ -94,42 +97,72 @@ const BlogDetails = () => {
 
       {data && (
         <div className="max-w-[1200px] mx-auto px-4 lg:px-8 my-10">
-          <hr className="my-10 h-1 bg-brown" />
-          {/* <div className="overflow-hidden rounded-lg aspect-w-16 aspect-h-9"> */}
-          <img
-            className="max-h-[60dvh] object-cover w-full max-w-[550px] h-auto transition-all duration-300 transform hover:scale-95 mb-5 rounded lg:float-start float-left lg:mr-[50px]"
-            src={data?.data?.imageUrl}
-            alt=""
-          />
-          {/* </div> */}
-
-          {/* blog topic */}
-          <h2 className="text-2xl font-bold text-gray-900 sm:text-4xl relative z-[1]">
-            {data?.data.title}
-          </h2>
-
-          {/* post date */}
-          <p className="mt-4 text-sm font-bold text-gray-500 ">
+          {/* post date and author */}
+          <p className="my-2 text-base lg:text-lg font-semibold text-gray-500 flex items-center">
+            <span className="font-bold text-gray-900 mr-1">
+              {data?.data?.author} •
+            </span>
             {new Date(data?.data.date).toDateString()}
           </p>
 
-          {/* Action Buttons */}
-          <div className="mt-4 cursor-pointer">
-            <b
-              onClick={handleShare}
-              className="inline-flex text-sm lg:text-xl font-medium items-center p-4 bg-[#4b1012]  text-white hover:bg-white hover:text-[#4b1012] ring-2 ring-[#4b1012] transition-all duration-300 ease-in-out"
-            >
-              <span className="material-symbols-outlined mr-2">share</span>
-              Share Post
-            </b>
+          {/* post image and title */}
+          <div className="max-h-[60dvh] overflow-hidden relative group">
+            <img
+              className="object-cover w-full h-full object-left-top transition-all duration-300 transform group-hover:scale-105 rounded"
+              src={data?.data?.imageUrl}
+              alt=""
+            />
+
+            {/* blog topic */}
+            <div className="absolute inset-0 flex items-center justify-center bg-black/80">
+              <h2 className="text-2xl font-extrabold text-white lg:text-5xl relative z-[1]">
+                {data?.data.title}
+              </h2>
+            </div>
           </div>
 
-          {/* post content */}
-          <div className="quill-div cursor-pointer mt-10 lg:mt-12">
-            <div dangerouslySetInnerHTML={{ __html: data.data.description }} />
+          <div className="lg:flex justify-between  mt-5 lg:mt-8 gap-5 ">
+            {/* Action Buttons */}
+            <div className="mb-5">
+              <div className="mt-4 lg:mt-0 cursor-pointer border-y-[1px] border-y-gray-300 h-16 flex items-center w-full lg:max-w-[300px] px-5">
+                <div
+                  title="comments"
+                  className="hover:bg-gray-200 bg-gray-100 p-2 rounded font-medium flex items-center"
+                >
+                  {" "}
+                  <FontAwesomeIcon
+                    icon={faComment}
+                    className="text-gray-700 font-medium text-xl"
+                  />
+                  ({data?.data?.comments?.length})
+                </div>
+                <button
+                  onClick={handleShare}
+                  className="hover:bg-gray-200 bg-gray-100 p-2 mx-2 text-sm text-gray-700 lg:text-base rounded font-medium flex items-center transition-all duration-300 ease-in-out"
+                >
+                  <FontAwesomeIcon
+                    icon={faArrowUpFromBracket}
+                    className="text-gray-700  font-medium text-xl mr-2"
+                    title="Share post"
+                  />
+                  Share
+                </button>
+              </div>
+
+              <div className="hidden lg:block w-full lg:max-w-[90%]">
+                <RelatedPost />
+              </div>
+            </div>
+
+            {/* post content */}
+            <div className="quill-div cursor-pointer  lg:max-w-[680px] lg:max-h-full overflow-x-auto">
+              <div
+                dangerouslySetInnerHTML={{ __html: data.data.description }}
+              />
+            </div>
           </div>
 
-          <hr className="my-12 lg:my-16" />
+          <hr className="my-12 " />
 
           {/* others || comment  */}
           <div className="">
@@ -256,35 +289,10 @@ const BlogDetails = () => {
 
       <hr className="my-12 lg:my-16" />
 
-      <section className="mb-20">
-        <div className="max-w-[1200px] mx-auto px-4 lg:px-8">
-          <h2 className="text-lg font-semibold lg:text-2xl">Other Blogs</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-10">
-            {otherData &&
-              otherData?.data.map((item, index) => {
-                if (index < 4 && item?.id !== id) {
-                  return (
-                    <Link
-                      to={`/blog/${item?.id}`}
-                      key={index}
-                      className="h-[250px] hover:scale-95 transition-all duration-300 ease-in-out"
-                    >
-                      <img src={item.imageUrl} className="h-[150px] w-full" />
-
-                      <h3 className="text-base lg:text-lg font-semibold mt-3">
-                        {item?.title}
-                      </h3>
-                      <p className="mt-4 text-sm font-normalfont-pj">
-                        {new Date(item?.date).toDateString()}
-                      </p>
-                    </Link>
-                  );
-                }
-              })}
-          </div>
-        </div>
-      </section>
+      <div className="lg:hidden">
+        {" "}
+        <RelatedPost />
+      </div>
 
       <Footer />
     </div>
