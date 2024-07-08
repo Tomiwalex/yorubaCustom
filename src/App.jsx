@@ -9,6 +9,7 @@ import LandingPage from "./pages/LandingPage";
 import ProductDetails from "./pages/ProductDetails.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import StorePage from "./pages/StorePage";
+import ContestPage from "./pages/ContestPage.jsx";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/contact" Component={ContactPage} />
           <Route path="/gallery" Component={GalleryPage} />
           <Route path="/store" Component={StorePage} />
+          <Route path="/contest" Component={ContestPage} />
           <Route path="/store/:id" Component={ProductDetails} />
           <Route path="/podcast" Component={PodcastPage} />
           <Route path="*" Component={LandingPage} />

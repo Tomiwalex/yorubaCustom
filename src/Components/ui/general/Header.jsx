@@ -120,7 +120,8 @@ const Header = ({ type, current, search, setSearch, handleSearch }) => {
 
             {/* vote now */}
             <Link
-              title=""
+              to="/contest"
+              title="vote now"
               className={`text-base nav-link font-semibold text-[#4b1019] transition-all duration-200 ${
                 current == "contest" && "active-nav-link"
               } `}
@@ -225,14 +226,14 @@ const Header = ({ type, current, search, setSearch, handleSearch }) => {
                   Contact{" "}
                 </Link>
               )}
-              <a
-                href="#"
-                title=""
+              <Link
+                to="/contest"
+                title="contest"
                 className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
               >
                 {" "}
-                Contest{" "}
-              </a>
+                Vote now{" "}
+              </Link>
 
               {current !== "gallery" && (
                 <Link

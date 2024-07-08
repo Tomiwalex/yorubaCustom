@@ -50,7 +50,7 @@ const HeroSection = () => {
           >
             <SwiperSlide>
               <img
-                className="object-cover object-center w-[80%] h-[80%] m-auto mt-[10%] rounded-tl-[90px] rounded-br-[90px]"
+                className="object-cover object-center w-[95%] h-[95%] m-auto mt-[2%] rounded-tl-[90px] rounded-br-[90px]"
                 src={slide2Image}
                 alt=""
               />
@@ -58,7 +58,7 @@ const HeroSection = () => {
 
             <SwiperSlide>
               <img
-                className="object-cover object-center w-[80%] h-[80%] m-auto mt-[10%] rounded-tl-[90px] rounded-br-[90px]"
+                className="object-cover object-center w-[95%] h-[95%] m-auto mt-[2%] rounded-tl-[90px] rounded-br-[90px]"
                 src={slide3Image}
                 alt="image 4"
               />
@@ -66,7 +66,7 @@ const HeroSection = () => {
 
             <SwiperSlide>
               <img
-                className="object-cover object-center w-[80%] h-[80%] m-auto mt-[10%] rounded-tl-[90px] rounded-br-[90px]"
+                className="object-cover object-center w-[95%] h-[95%] m-auto mt-[2%] rounded-tl-[90px] rounded-br-[90px]"
                 src={slide5Image}
                 alt=""
               />
@@ -74,7 +74,7 @@ const HeroSection = () => {
 
             <SwiperSlide>
               <img
-                className="object-cover object-center w-[80%] h-[80%] m-auto mt-[10%] rounded-tl-[90px] rounded-br-[90px]"
+                className="object-cover object-center w-[95%] h-[95%] m-auto mt-[2%] rounded-tl-[90px] rounded-br-[90px]"
                 src={slide4Image}
                 alt="image 5"
               />
@@ -88,7 +88,7 @@ const HeroSection = () => {
           whileInView={{ translateY: 0, opacity: 1 }}
           className=" relative px-5 md:px-[50px] lg:px-[100px] z-[4] my-auto"
         >
-          <div className="max-w-xl mx-auto text-center lg:justify-center lg:max-w-md xl:max-w-lg lg:text-left lg:mx-0 lg:h-full xl:mt-[10%]  my-auto">
+          <div className="max-w-xl mx-auto text-center lg:justify-center lg:max-w-md xl:max-w-lg lg:text-left lg:mx-0 lg:h-full   my-auto">
             <div className="blur-circle h-40 w-40 absolute blur-[70px] rounded-full z-[-1]"></div>
 
             <h1 className="mt-12 lg:mt-0 text-[36px] leading-[1.3] font-bold text-white lg:text-[65px] xl:leading-tight">
