@@ -62,7 +62,7 @@ const ContactPage = () => {
           <div className=" mt-5 flex flex-wrap gap-3">
             {/* the mail */}
             <a
-              href="mailto:yorubacustoms@gmail.com"
+              href="mailto:info@yorubacustoms.com"
               className="p-4 rounded-2xl text-center bg-white group hover:bg-[#4b1012] transition-all durstion-300 ease-in-out inline-block"
             >
               <span className="material-symbols-outlined group-hover:text-[#fff] color-brown text-2xl font-bold transition-all durstion-300 ease-in-out">
@@ -70,7 +70,7 @@ const ContactPage = () => {
               </span>
 
               <p className="text-base text-gray-500 group-hover:text-[#fff] transition-all durstion-300 ease-in-out">
-                yorubacustoms@gmail.com
+                info@yorubacustoms.com
               </p>
             </a>
 
