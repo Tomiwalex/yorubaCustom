@@ -122,9 +122,16 @@ const BlogDetails = () => {
           </div>
 
           <div className="lg:flex justify-between  mt-5 lg:mt-8 gap-5 ">
+            {/* post content */}
+            <div className="quill-div cursor-pointer  lg:max-w-[680px] lg:max-h-full overflow-x-auto">
+              <div
+                dangerouslySetInnerHTML={{ __html: data.data.description }}
+              />
+            </div>
+
             {/* Action Buttons */}
             <div className="mb-5">
-              <div className="mt-4 lg:mt-0 cursor-pointer border-y-[1px] border-y-gray-300 h-16 flex items-center w-full lg:max-w-[300px] px-5">
+              <div className="mt-4 lg:mt-0 cursor-pointer border-y-[1px] border-y-gray-300 h-16 flex items-center w-full lg:max-w-[300px] px-5 lg:ml-auto">
                 <div
                   title="comments"
                   className="hover:bg-gray-200 bg-gray-100 p-2 rounded font-medium flex items-center"
@@ -149,16 +156,9 @@ const BlogDetails = () => {
                 </button>
               </div>
 
-              <div className="hidden lg:block w-full lg:max-w-[90%]">
+              <div className="hidden lg:block w-full lg:max-w-[90%] lg:ml-auto">
                 <RelatedPost />
               </div>
-            </div>
-
-            {/* post content */}
-            <div className="quill-div cursor-pointer  lg:max-w-[680px] lg:max-h-full overflow-x-auto">
-              <div
-                dangerouslySetInnerHTML={{ __html: data.data.description }}
-              />
             </div>
           </div>
 

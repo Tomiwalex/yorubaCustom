@@ -1,7 +1,16 @@
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import Footer from "../Components/ui/general/Footer";
 import Header from "../Components/ui/general/Header";
 import image from "../assets/images/slide-3-image.jpg";
 
 const ContestPage = () => {
+  const [showForm, setShowForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    mail: "",
+    phonenumber: "",
+  });
   return (
     <div className="min-h-[100dvh] bg-[#4b101220]">
       <Header current="contest" />
@@ -39,8 +48,8 @@ const ContestPage = () => {
           Ongoing contests
         </h1>
 
-        <div className="mt-5 grid grid-cols-1 md:grid-cols-2">
-          <div className="p-3 bg-[#F8F8F8] rounded-[32px] flex justify-between gap-2 flex-wrap">
+        <div className="mt-5 grid grid-cols-1 md:grid-cols-2 mb-20">
+          <div className="p-3 bg-[#F8F8F8] rounded-2xl flex justify-between gap-2 flex-wrap">
             <div className="w-full lg:w-[220px] rounded-[32px] overflow-hidden h-[150px] lg:h-[190px] bg-white block">
               <img
                 src="https://png.pngtree.com/png-clipart/20200501/ourmid/pngtree-contest-watercolor-splash-short-sentence-copywriting-png-image_2196894.jpg"
@@ -56,30 +65,114 @@ const ContestPage = () => {
                 Lorem ipsum dolor sit amet consectetur.
               </p>
 
-              <button className="mt-3 text-white font-semibold text-base lg:text-lg px-5 bg-[#4b1012] rounded-[20px] p-3 w-full lg:w-max hover:bg-[#4b101280] duration-300 ease-in-out transition-all">
+              <button
+                onClick={() => setShowForm(true)}
+                className="mt-3 text-white font-semibold text-base lg:text-lg px-5 bg-[#4b1012] rounded-[20px] p-3 w-full lg:w-max hover:bg-[#4b101280] duration-300 ease-in-out transition-all"
+              >
                 Vote now
               </button>
             </div>
 
             <div className="basis-full px-2 mb-4">
-              <h3 className="font-semibold text-lg lg:text-xl mt-4 mb-2">
+              <h3 className="font-bold text-lg lg:text-xl mt-4 mb-1">
                 Contestants(2)
               </h3>
 
               {[1, 1, 1].map((item, index) => {
                 return (
-                  <p
-                    key={index}
-                    className="mt-3 border-gray-300 border-[1px] shasow-sm  p-4 rounded-[20px] text-sm lg:text-base font-semibold"
-                  >
-                    Contestant name
-                  </p>
+                  <div key={index} className="flex gap-3 my-2 items-center">
+                    <span className="bg-gray-200 h-10 w-10 rounded-xl text-base font-bold flex items-center justify-center">
+                      {index + 1}
+                    </span>
+                    <p className="text-sm lg:text-base font-semibold">
+                      Contestant name
+                    </p>
+                  </div>
                 );
               })}
             </div>
           </div>
         </div>
       </section>
+
+      {/* form to vote */}
+      <AnimatePresence>
+        {showForm && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="fixed z-10 bg-[#00000090] backdrop-blur-sm inset-0 p-5 md:p-[50px] lg:p-[100px]"
+          >
+            <div className="rounded w-[100%] cursor-pointer md:max-w-[350px] bg-white p-4 ml-auto">
+              {/* cancel button */}
+              <span
+                onClick={() => setShowForm(false)}
+                className="material-symbols-outlined ml-auto inline-block hover:bg-red-100 p-2 rounded"
+              >
+                close
+              </span>
+
+              <h3 className="text-xl mt-4 lg:text:3xl text-gray-800 font-semibold">
+                Vote
+              </h3>
+
+              <p className="text-sm lg:text-base text-gray-400 font-medium leading-[1.6] mt-1 max-w-[500px]">
+                Fill in the form accurately to vote.
+              </p>
+
+              <form action="/vote/1" className="mt-7">
+                <input
+                  type="text"
+                  className="w-full px-3 py-[10px] rounded border-[2px] border-gray-300"
+                  placeholder="Your name"
+                  required
+                  value={formData.name}
+                  onChange={(e) =>
+                    setFormData({ ...formData, name: e.target.value })
+                  }
+                  name="name"
+                  id="name"
+                />
+                <input
+                  type="email"
+                  className="my-5 w-full px-3 py-[10px] rounded border-[2px] border-gray-300"
+                  value={formData.mail}
+                  onChange={(e) =>
+                    setFormData({ ...formData, mail: e.target.value })
+                  }
+                  placeholder="Your mail"
+                  required
+                  name="email"
+                />
+
+                <input
+                  type="tel"
+                  min="9"
+                  max="12"
+                  className="w-full px-3 py-[10px] rounded border-[2px] border-gray-300"
+                  value={formData.phonenumber}
+                  onChange={(e) =>
+                    setFormData({ ...formData, phonenumber: e.target.value })
+                  }
+                  placeholder="Phone number"
+                  required
+                  name="phone number"
+                />
+
+                <input
+                  className="cursor-pointer w-full bg-gray-800 text-white p-3 rounded text-base font-semibold mt-6"
+                  type="submit"
+                  value="Continue"
+                />
+              </form>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <Footer />
     </div>
   );
 };

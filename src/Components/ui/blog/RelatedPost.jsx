@@ -9,7 +9,9 @@ const RelatedPost = () => {
   return (
     <section className="mb-20 mt-5 w-full">
       <div className=" mx-auto px-4 lg:px-0">
-        <h2 className="text-lg font-bold lg:text-xl mb-4">Other Blogs</h2>
+        <h2 className="text-lg font-bold lg:text-xl mb-4 lg:text-right">
+          Other Blogs
+        </h2>
 
         <div className="grid grid-cols-1  mt-5 gap-y-5">
           {loading && (
@@ -27,7 +29,7 @@ const RelatedPost = () => {
                   <Link
                     to={`/blog/${item?.id}`}
                     key={index}
-                    className="hover:scale-95 transition-all duration-300 ease-in-out flex bg-gray-50 rounded-xl p-3 gap-x-4 shasow-sm"
+                    className="hover:scale-95 transition-all duration-300 ease-in-out flex bg-gray-50 rounded-xl p-2 lg:p-3 gap-x-4 shasow-sm"
                   >
                     <img
                       src={item.imageUrl}
