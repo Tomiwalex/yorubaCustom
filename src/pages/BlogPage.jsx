@@ -13,11 +13,11 @@ const BlogPage = () => {
     <div>
       <Header current={"blog"} />
 
-      <section className="py-10 bg-[#4b101210] min-h-[100dvh] pb-20">
+      <section className="py-10 bg-[#4b101210]  pb-20">
         <div className="px-5 md:px-[50px] lg:px-[100px] mx-auto max-w-[1700px]">
           {/* <div className="blur-circle h-40 w-40 absolute blur-[70px] rounded-full z-[0]"></div> */}
 
-          <div className="max-w-[1700px] mx-auto flex flex-wrap justify-between align-top">
+          <div className="max-w-[1700px] mx-auto flex flex-wrap justify-between align-top w-full">
             <div className="mb-5 relative">
               <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl relative z-[1]">
                 Read our blog

@@ -75,12 +75,12 @@ const Footer = () => {
                 Gallery
               </Link>
 
-              <a
-                href="#"
+              <Link
+                to="/contest"
                 className="transition-colors duration-300 text-gray-300  hover:underline hover:text-blue-500"
               >
-                Contest
-              </a>
+                Vote now
+              </Link>
             </div>
           </div>
         </div>
