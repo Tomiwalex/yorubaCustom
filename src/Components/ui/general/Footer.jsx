@@ -34,12 +34,12 @@ const Footer = () => {
                 Home
               </Link>
 
-              <Link
-                to="/blog"
+              <a
+                href="https://yorubacustoms.com/blog/"
                 className="transition-colors duration-300 text-gray-300  hover:underline hover:text-blue-500"
               >
                 Blog
-              </Link>
+              </a>
 
               <Link
                 to="/about"
@@ -90,7 +90,7 @@ const Footer = () => {
         <div className="flex items-center justify-between">
           <Link to="/">
             <img
-              className="w-[110px] h-auto"
+              className="w-[80px] lg:w-[110px] h-auto"
               src={whiteLogo}
               alt="white-logo"
             />
@@ -98,19 +98,35 @@ const Footer = () => {
 
           <div className="flex items-center gap-5">
             <a href="mailto:yorubacustoms@gmail.com">
-              <FontAwesomeIcon icon={faEnvelope} size="2x" color="white" />
+              <FontAwesomeIcon
+                icon={faEnvelope}
+                className="text-2xl lg:text-[32px]"
+                color="white"
+              />
             </a>
 
             <a href="https://www.tiktok.com/@yorubacustoms?_t=8ngWB4MBqSc&_r=1">
-              <FontAwesomeIcon icon={faTiktok} size="2x" color="white" />
+              <FontAwesomeIcon
+                icon={faTiktok}
+                className="text-2xl lg:text-[32px]"
+                color="white"
+              />
             </a>
 
             <a href="http://youtube.com/@yorubacustoms">
-              <FontAwesomeIcon icon={faYoutube} size="2x" color="white" />
+              <FontAwesomeIcon
+                icon={faYoutube}
+                className="text-2xl lg:text-[32px]"
+                color="white"
+              />
             </a>
 
             <a href="https://www.instagram.com/yorubacustoms?utm_source=qr&igsh=MW1pYWhqMXY0bTc2Mg==">
-              <FontAwesomeIcon icon={faInstagram} size="2x" color="white" />
+              <FontAwesomeIcon
+                icon={faInstagram}
+                className="text-2xl lg:text-[32px]"
+                color="white"
+              />
             </a>
           </div>
         </div>

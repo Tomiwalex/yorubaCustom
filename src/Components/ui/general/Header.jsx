@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../../assets/icons/logo-brown-2.jpg";
+import logo from "../../../assets/icons/logo-brown-2.png";
 
 // eslint-disable-next-line react/prop-types
 const Header = ({ type, current, search, setSearch, handleSearch }) => {
@@ -20,7 +20,7 @@ const Header = ({ type, current, search, setSearch, handleSearch }) => {
                   bottom:
                     current == "store" || current === "home" ? "5px" : "0px",
                 }}
-                className="relative w-[70px] lg:w-[90px] h-auto"
+                className="relative w-[70px] lg:w-[90px] h-[39px] lg:h-[50px]"
                 src={logo}
                 alt="logo"
               />
@@ -108,15 +108,15 @@ const Header = ({ type, current, search, setSearch, handleSearch }) => {
               Gallery
             </Link>
 
-            <Link
-              to="/blog"
+            <a
+              href="https://yorubacustoms.com/blog/"
               className={`text-base nav-link ${
                 current == "blog" && "active-nav-link"
               }  font-semibold text-[#4b1019] transition-all duration-200 `}
             >
               {" "}
               Blog{" "}
-            </Link>
+            </a>
 
             {/* vote now */}
             <Link
@@ -183,49 +183,36 @@ const Header = ({ type, current, search, setSearch, handleSearch }) => {
         >
           <div className="flow-root">
             <div className="flex flex-col px-6 -my-2 space-y-1">
-              {current !== "home" && (
-                <Link
-                  to="/"
-                  title=""
-                  className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
-                >
-                  {" "}
-                  Home{" "}
-                </Link>
-              )}
+              <Link
+                to="/"
+                title=""
+                className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
+              >
+                {" "}
+                Home{" "}
+              </Link>
 
-              {current !== "about" && (
-                <Link
-                  to="/about"
-                  title=""
-                  className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
-                >
-                  {" "}
-                  About{" "}
-                </Link>
-              )}
+              {/* gallery */}
+              <Link
+                to="gallery"
+                title=""
+                className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
+              >
+                {" "}
+                Gallery{" "}
+              </Link>
 
-              {current !== "blog" && (
-                <Link
-                  to="/blog"
-                  title=""
-                  className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
-                >
-                  {" "}
-                  Blog{" "}
-                </Link>
-              )}
+              {/* blog */}
+              <a
+                href="https://yorubacustoms.com/blog/"
+                title="Go to blog"
+                className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
+              >
+                {" "}
+                Blog{" "}
+              </a>
 
-              {current !== "contact" && (
-                <Link
-                  to="/contact"
-                  title=""
-                  className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
-                >
-                  {" "}
-                  Contact{" "}
-                </Link>
-              )}
+              {/* vote */}
               <Link
                 to="/contest"
                 title="contest"
@@ -235,26 +222,34 @@ const Header = ({ type, current, search, setSearch, handleSearch }) => {
                 Vote now{" "}
               </Link>
 
-              {current !== "gallery" && (
-                <Link
-                  to="gallery"
-                  title=""
-                  className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
-                >
-                  {" "}
-                  Gallery{" "}
-                </Link>
-              )}
+              {/* podcast */}
+              <Link
+                to="/podcast"
+                className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
+              >
+                {" "}
+                Podcast{" "}
+              </Link>
 
-              {current !== "podcast" && (
-                <Link
-                  to="/podcast"
-                  className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
-                >
-                  {" "}
-                  Podcast{" "}
-                </Link>
-              )}
+              {/* about */}
+              <Link
+                to="/about"
+                title=""
+                className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
+              >
+                {" "}
+                About{" "}
+              </Link>
+
+              {/* contact */}
+              <Link
+                to="/contact"
+                title=""
+                className="inline-flex py-2 text-base font-semibold text-[#4b1019] transition-all duration-200 hover:text-[#4b1012] focus:text-[#4b1012]"
+              >
+                {" "}
+                Contact{" "}
+              </Link>
             </div>
           </div>
 

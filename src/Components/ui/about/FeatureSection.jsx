@@ -11,7 +11,7 @@ const FeatureSection = () => {
         </div>
 
         <div className="relative grid grid-cols-1 mt-10  sm:mt-16 sm:grid-cols-2 gap-4 md:grid-cols-4  xl:mt-24">
-          <ul className="list-disc font-medium p-4 py-10 md:p-6 lg:p-8 relative rounded-md  bg-[#fff]  ">
+          <ul className="list-disc list-inside font-medium p-4 py-10 md:p-6 lg:p-8 relative rounded-md  bg-[#fff]  ">
             <li className="mt-5 text-base lg:text-lg text-gray-600">
               To put out the beauty of the Yoruba Culture and make people fall
               in love with it.
@@ -23,7 +23,7 @@ const FeatureSection = () => {
           </ul>
 
           {/* second feature */}
-          <ul className="list-disc font-medium p-4 py-10 md:p-6 lg:p-8 md:border-l md:border-gray-200 relative overflow-hidden rounded-md bg-[#fff] ">
+          <ul className="list-disc list-inside font-medium p-4 py-10 md:p-6 lg:p-8 md:border-l md:border-gray-200 relative overflow-hidden rounded-md bg-[#fff] ">
             <li className="mt-5 text-base lg:text-lg text-gray-600">
               To project Yoruba Culture wide and beyond
             </li>
@@ -34,7 +34,7 @@ const FeatureSection = () => {
           </ul>
 
           {/* third feature */}
-          <ul className="list-disc font-medium p-4 py-10 md:p-6 lg:p-8 md:border-l md:border-gray-200 relative bg-[#fff] rounded-md  ">
+          <ul className="list-disc list-inside font-medium p-4 py-10 md:p-6 lg:p-8 md:border-l md:border-gray-200 relative bg-[#fff] rounded-md  ">
             <li className="mt-5 text-base lg:text-lg text-gray-600 font-pj">
               To tell authentic and undiluted Yoruba stories.
             </li>
@@ -44,7 +44,7 @@ const FeatureSection = () => {
           </ul>
 
           {/* fourth feature */}
-          <ul className="list-disc font-medium p-4 py-10 md:p-6 lg:p-8 md:border-l md:border-gray-200 relative bg-[#fff] rounded-md  ">
+          <ul className="list-disc list-inside font-medium p-4 py-10 md:p-6 lg:p-8 md:border-l md:border-gray-200 relative bg-[#fff] rounded-md  ">
             <li className="mt-5 text-base lg:text-lg text-gray-600 font-pj">
               To promote cultural exchange within the Yoruba in the diaspora.
             </li>

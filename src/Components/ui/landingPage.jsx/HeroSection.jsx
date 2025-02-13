@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/jsx-no-comment-textnodes */
 import Header from "../general/Header";
-import festivalImage from "../../../assets/images/festival.png";
 import slide3Image from "../../../assets/images/slide-3-image.jpg";
 import slide4Image from "../../../assets/images/slide-4-image.jpg";
 import slide5Image from "../../../assets/images/slide-1-image.jpg";
@@ -36,7 +35,6 @@ const HeroSection = () => {
 
           <Swiper
             className="w-[50%] ml-[50%] h-full"
-            // effect={"fade"}
             modules={[EffectFade, Autoplay, Pagination]}
             spaceBetween={0}
             slidesPerView={1}
@@ -45,8 +43,6 @@ const HeroSection = () => {
               disableOnInteraction: false,
             }}
             pagination={{ clickable: true }}
-            // onSlideChange={() => console.log("slide change")}
-            // onSwiper={(swiper) => console.log(swiper)}
           >
             <SwiperSlide>
               <img
@@ -112,10 +108,10 @@ const HeroSection = () => {
         </motion.div>
 
         {/* hero image for small screen */}
-        <div className="lg:hidden">
+        <div className="lg:hidden rounded-t-3xl">
           <img
-            className="object-cover w-full relative top-[43px] min-h-[340px]"
-            src={festivalImage}
+            className="object-cover w-full relative top-[43px] min-h-[340px] rounded-t-3xl"
+            src={slide3Image}
             alt="festival"
           />
         </div>

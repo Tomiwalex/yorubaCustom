@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import { Link, useParams } from "react-router-dom";
-import logo from "../assets/icons/logo-brown-2.jpg";
+import logo from "../assets/icons/logo-brown-2.png";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import StarRating from "../Components/ui/product/StarRating";

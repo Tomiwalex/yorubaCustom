@@ -36,13 +36,13 @@ const BlogSection = () => {
           </div>
         )}
 
-        <div className="h-full grid max-w-[1700px] grid-cols-1  mt-14  sm:mt-16 sm:text-left sm:grid-cols-4 gap-3 ">
+        <div className="h-full grid max-w-[1700px] grid-cols-1  mt-14  sm:mt-16 sm:text-left sm:grid-cols-4 gap-3 w-full">
           {/* loading state */}
           {loading &&
-            [1, 2, 3, 4, 5].map((item, index) => {
+            [1, 2, 3, 4].map((item, index) => {
               return (
                 <SkeletalLoading
-                  backgroundColor={"white"}
+                  backgroundColor={"#00000010"}
                   key={index}
                   height={"60dvh"}
                   width={"100%"}

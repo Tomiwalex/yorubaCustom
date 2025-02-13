@@ -5,7 +5,7 @@ const About2 = () => {
   return (
     <section className="py-10 px-1 bg-[#4b010210]cursor-pointer">
       <div className="px-4 mx-auto max-w-[1700px] md:px-[50px] lg:px-[100px]">
-        <motion.div className="relative grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2 gap-1 md:grid-cols-3  xl:my-16">
+        <motion.div className="relative grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2 gap-5 gap-y-8 md:grid-cols-3  xl:my-16">
           <motion.div
             initial={{ translateY: 50, opacity: 0 }}
             whileInView={{ translateY: 0, opacity: 1 }}

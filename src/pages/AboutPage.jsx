@@ -16,12 +16,12 @@ const AboutPage = () => {
         <img
           src={image1}
           alt="two-people-facing-each-other"
-          className="absolute h-full z-[-1] "
+          className="absolute h-full z-[-1] opacity-15 lg:opacity-80"
         />
 
         <img
           src={image2}
-          className="absolute h-full lg:h-auto z-[-2] right-[-50%] lg:right-[-14%] bottom-[-30%]"
+          className="hidden  lg:block lg:absolute h-full lg:h-auto z-[-2] right-[-50%] lg:right-[-14%] bottom-[-30%]"
         />
 
         {/* second underlay image */}

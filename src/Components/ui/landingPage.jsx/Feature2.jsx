@@ -108,7 +108,7 @@ const Feature2 = () => {
             <div className="overflow-hidden  aspect-w-16 aspect-h-9">
               <img
                 className="object-cover w-full h-full transition-all duration-300 transform group-hover:scale-125 lg:h-[200px]"
-                src="https://ocdn.eu/pulscms-transforms/1/HdXktkqTURBXy9kZDgzYmIxNTU4YjY1NzgxODk0MzdjNDlmN2UwMTBiMC5qcGVnkpUDAAzNAibNATWTBc0EsM0Cdg"
+                src="https://ocdn.eu/images/pulscms/OGI7MDA_/dd83bb1558b6578189437c49f7e010b0.jpeg"
                 alt=""
               />
             </div>
